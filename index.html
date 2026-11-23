@@ -32,18 +32,66 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .footer{padding:42px 0;font-size:12px}.brand small{font-size:11px}
 @media(max-width:560px){.hero{padding:28px 21px;min-height:330px}.hero h2{font-size:30px}.grade h3{font-size:22px}.main-panel,.side-panel{padding:16px}}
 
+
+/* ARKO 3D visual refresh */
+.hero-next{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;min-height:430px;padding:42px 48px;isolation:isolate}
+.hero-copy{position:relative;z-index:2}.hero-next h2{font-size:clamp(32px,4.5vw,53px);line-height:1.55;margin:18px 0 12px}
+.hero-next h2 span{background:linear-gradient(90deg,#70e6e3,#a990ff 72%);-webkit-background-clip:text;color:transparent}
+.hero-next p{max-width:600px;font-size:14px;line-height:2.2}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#67f0c2;box-shadow:0 0 12px #67f0c2;margin-left:7px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.hero-chips span{font-size:11px;color:#d8e9ff;background:#ffffff0c;border:1px solid #ffffff20;padding:9px 12px;border-radius:30px;backdrop-filter:blur(8px)}
+.hero-visual{height:320px;position:relative;display:grid;place-items:center;perspective:900px}
+.visual-glow{position:absolute;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,#8d78ff66,#36d9dc20 55%,transparent 72%);filter:blur(10px)}
+.cell-core{position:relative;width:190px;height:190px;border-radius:48% 52% 45% 55%;transform:rotateX(16deg) rotateY(-20deg) rotateZ(-12deg);background:radial-gradient(ellipse at 30% 24%,#c8b8ff,#7863d7 22%,#3c4e9a 48%,#152d57 74%);border:2px solid #b7a9ff;box-shadow:inset -18px -20px 34px #080f2c,inset 12px 12px 26px #ffffff55,0 30px 55px #020716aa,0 0 45px #8e79ff66;animation:cellFloat 6s ease-in-out infinite}
+.cell-core:before,.cell-core:after{content:"";position:absolute;border:2px solid #77e7e4aa;border-radius:50%;inset:17px 25px 22px 14px;transform:rotate(34deg);box-shadow:inset 0 0 15px #70e7e466}
+.cell-core:after{inset:35px 12px 30px 32px;transform:rotate(-38deg);border-color:#d6baff88}
+.cell-nucleus{position:absolute;z-index:2;left:67px;top:61px;width:57px;height:57px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:27px;background:radial-gradient(circle at 30% 25%,#f1d9ff,#a06bdb 40%,#4c377f 80%);box-shadow:inset -7px -8px 12px #21153f,0 0 24px #d09bff99}
+.cell-core i,.cell-core b,.cell-core em{position:absolute;display:block;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#d9ffff,#49d9d0 55%,#176b87);box-shadow:0 0 13px #62e4e1}
+.cell-core i{top:38px;left:45px}.cell-core b{right:35px;bottom:48px;width:19px;height:19px}.cell-core em{right:44px;top:35px;width:9px;height:9px}
+.orbit{position:absolute;width:270px;height:105px;border:1px solid #6de3e288;border-radius:50%;transform:rotate(-28deg);box-shadow:0 0 20px #6de3e21a}
+.orbit-two{width:300px;height:130px;transform:rotate(58deg);border-color:#a78cff88}
+.molecule{position:absolute;z-index:3;width:55px;height:55px;border-radius:18px;display:grid;place-items:center;font-size:29px;background:linear-gradient(145deg,#ffffff26,#ffffff08);border:1px solid #ffffff44;box-shadow:0 14px 30px #0007,inset 0 1px 1px #ffffff55;backdrop-filter:blur(8px);animation:floatTag 5s ease-in-out infinite}
+.molecule-a{top:25px;right:20px}.molecule-b{bottom:35px;right:35px;animation-delay:-1.5s}.molecule-c{top:100px;left:2px;animation-delay:-3s}
+.float-tag{position:absolute;z-index:3;font-size:9px;letter-spacing:2px;color:#c6faff;background:#102b42cc;border:1px solid #62dfe255;border-radius:20px;padding:8px 12px;box-shadow:0 8px 25px #0005}
+.tag-top{top:12px;left:20px}.tag-bottom{bottom:12px;left:28px;color:#d8caff;border-color:#a58aff66}
+@keyframes cellFloat{0%,100%{transform:translateY(0) rotateX(16deg) rotateY(-20deg) rotateZ(-12deg)}50%{transform:translateY(-12px) rotateX(20deg) rotateY(-13deg) rotateZ(-7deg)}}
+@keyframes floatTag{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-10px) rotate(5deg)}}
+.grade{min-height:184px}.grade h3{display:flex;align-items:center;gap:8px}
+.grade p{max-width:240px;line-height:1.9}
+.section-title p{font-size:13px}
+.resource a{border:1px solid #62dfe255;border-radius:9px;padding:8px 11px;background:#15334666}
+.resource{transition:.2s}.resource:hover{border-color:#6de2df;transform:translateY(-2px)}
+.tool{border-radius:12px}.tool button:hover,.btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.bio-card{min-height:88px}.bio-card strong{font-size:14px}
+@media(max-width:850px){.hero-next{grid-template-columns:1fr;min-height:auto}.hero-visual{height:270px;grid-row:1}.hero-copy{grid-row:2}.hero-next h2{font-size:37px}}
+@media(max-width:560px){.hero-next{padding:25px 19px}.hero-visual{height:235px;transform:scale(.9);margin:-8px 0}.hero-next h2{font-size:31px}.hero-chips span{font-size:10px}.float-tag{font-size:8px}}
+
 </style>
 </head>
 <body>
 <main class="shell">
 <header class="top"><div class="brand"><div class="logo"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 5c22 7 22 23 0 30M31 5C9 12 9 28 31 35M12 10h16M9 20h22M12 30h16" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M14 14h12M14 26h12" stroke="#fff" stroke-width="1.5"/></svg></div><div><h1>ARKO</h1><small>Biology Learning Space</small></div></div><div class="top-actions"><button class="ghost" id="homeBtn">صفحه اصلی</button><button class="ghost" id="shareBtn">اشتراک‌گذاری ↗</button></div></header>
-<section class="hero"><div class="eyebrow">فضای تخصصی یادگیری زیست‌شناسی</div><h2>زیست‌شناسی را عمیق‌تر<br>بفهم، تمرین کن و پیشرفت کن.</h2><p>منابع آموزشی، کتاب‌ها و آزمون‌های زیست دهم، یازدهم و دوازدهم در یک فضای منظم. ابزارهای مطالعه هم همیشه کنار دستت هستند.</p>
-<svg class="hero-art" viewBox="0 0 160 150" fill="none" aria-hidden="true"><path d="M34 8c90 35 90 95 0 134M126 8C36 43 36 103 126 142M45 20h70M30 48h100M30 76h100M30 104h100M45 132h70" stroke="#65dce4" stroke-width="3" stroke-linecap="round"/><circle cx="80" cy="76" r="65" stroke="#9c83ff" stroke-opacity=".4"/></svg></section>
+<section class="hero hero-next">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="live-dot"></span> آکادمی هوشمند زیست‌شناسی · نسخه ویژه ARKO</div>
+    <h2>جهان شگفت‌انگیز زیست،<br><span>از اینجا شروع می‌شود.</span></h2>
+    <p>کتاب‌ها، آموزش‌ها و آزمون‌های زیست دهم تا دوازدهم، کنار ابزارهایی که مسیر یادگیری را منظم‌تر و جذاب‌تر می‌کنند.</p>
+    <div class="hero-chips"><span>🧬 یادگیری مفهومی</span><span>🔬 منابع یک‌جا</span><span>🚀 پیشرفت هوشمند</span></div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+    <div class="visual-glow"></div>
+    <div class="molecule molecule-a">🧬</div><div class="molecule molecule-b">🧫</div><div class="molecule molecule-c">🔬</div>
+    <div class="cell-core"><div class="cell-nucleus">✦</div><i></i><b></b><em></em></div>
+    <div class="float-tag tag-top">DNA · LIFE CODE</div><div class="float-tag tag-bottom">BIOLOGY LAB ✧</div>
+  </div>
+</section>
 <div class="section-title"><div><h2>مسیر یادگیری تو</h2><p>پایه تحصیلی موردنظرت را انتخاب کن</p></div></div>
 <section class="grade-grid">
-<button class="grade active" data-grade="دهم"><span class="num">GRADE 10</span><span class="arrow">↙</span><h3>زیست دهم</h3><p>از دنیای یاخته تا گوارش و گردش مواد</p></button>
-<button class="grade" data-grade="یازدهم"><span class="num">GRADE 11</span><span class="arrow">↙</span><h3>زیست یازدهم</h3><p>تنظیم عصبی، حواس و دستگاه‌های بدن</p></button>
-<button class="grade" data-grade="دوازدهم"><span class="num">GRADE 12</span><span class="arrow">↙</span><h3>زیست دوازدهم</h3><p>مولکول‌های اطلاعاتی، ژنتیک و تغییر</p></button>
+<button class="grade active" data-grade="دهم"><span class="num">GRADE 10</span><span class="arrow">↙</span><h3>🧪 زیست دهم</h3><p>از دنیای یاخته تا گوارش و گردش مواد</p></button>
+<button class="grade" data-grade="یازدهم"><span class="num">GRADE 11</span><span class="arrow">↙</span><h3>🧬 زیست یازدهم</h3><p>تنظیم عصبی، حواس و دستگاه‌های بدن</p></button>
+<button class="grade" data-grade="دوازدهم"><span class="num">GRADE 12</span><span class="arrow">↙</span><h3>🔬 زیست دوازدهم</h3><p>مولکول‌های اطلاعاتی، ژنتیک و تغییر</p></button>
 </section>
 <section class="workspace" id="learning">
 <div class="main-panel"><div class="resource-head"><h3 id="gradeTitle">زیست دهم</h3><span id="countLabel">۰ منبع</span></div>
@@ -51,14 +99,14 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 <div id="resourceList" class="resource-list"></div>
 
 </div>
-<aside class="side-panel"><h3>ابزارهای کاربردی</h3>
-<div class="tool"><strong>ماشین‌حساب سریع</strong><p>محاسبات روزمره‌ات را همین‌جا انجام بده.</p><input id="calcInput" inputmode="decimal" placeholder="مثلاً (25+15)*2"><button id="calcBtn">محاسبه</button><div class="result" id="calcResult"></div></div>
-<div class="tool"><strong>درصدسنج آزمون</strong><p>تعداد درست، غلط و نزده را وارد کن.</p><input id="correct" type="number" min="0" placeholder="تعداد درست"><input id="wrong" type="number" min="0" placeholder="تعداد غلط"><input id="blank" type="number" min="0" placeholder="تعداد نزده"><button id="percentBtn">محاسبه درصد</button><div class="result" id="percentResult"></div></div>
-<div class="tool"><strong>دفترچه یادداشت</strong><p>یادداشت‌ها روی همین دستگاه ذخیره می‌شوند.</p><textarea class="note-area" id="notes" placeholder="نکته‌های مهم زیست..."></textarea><button class="save-note" id="saveNote">ذخیره یادداشت</button><div class="note-status" id="noteStatus"></div></div>
-<div class="tool"><strong>یادآور مطالعه</strong><p>برای خودت یک پیام کوتاه یادآوری تنظیم کن.</p><input id="reminderText" placeholder="مثلاً مرور گفتار دوم"><button id="reminderBtn">نمایش یادآور</button><div class="result" id="reminderResult"></div></div>
+<aside class="side-panel"><h3>🛠️ ابزارهای کاربردی</h3>
+<div class="tool"><strong>🧮 ماشین‌حساب سریع</strong><p>محاسبات روزمره‌ات را همین‌جا انجام بده.</p><input id="calcInput" inputmode="decimal" placeholder="مثلاً (25+15)*2"><button id="calcBtn">محاسبه</button><div class="result" id="calcResult"></div></div>
+<div class="tool"><strong>📊 درصدسنج آزمون</strong><p>تعداد درست، غلط و نزده را وارد کن.</p><input id="correct" type="number" min="0" placeholder="تعداد درست"><input id="wrong" type="number" min="0" placeholder="تعداد غلط"><input id="blank" type="number" min="0" placeholder="تعداد نزده"><button id="percentBtn">محاسبه درصد</button><div class="result" id="percentResult"></div></div>
+<div class="tool"><strong>📝 دفترچه یادداشت</strong><p>یادداشت‌ها روی همین دستگاه ذخیره می‌شوند.</p><textarea class="note-area" id="notes" placeholder="نکته‌های مهم زیست..."></textarea><button class="save-note" id="saveNote">ذخیره یادداشت</button><div class="note-status" id="noteStatus"></div></div>
+<div class="tool"><strong>⏰ یادآور مطالعه</strong><p>برای خودت یک پیام کوتاه یادآوری تنظیم کن.</p><input id="reminderText" placeholder="مثلاً مرور گفتار دوم"><button id="reminderBtn">نمایش یادآور</button><div class="result" id="reminderResult"></div></div>
 </aside></section>
 <section class="bio-strip"><div class="bio-card"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#57d9df" stroke-width="2"/><circle cx="24" cy="24" r="7" fill="#9b7cff"/><circle cx="13" cy="15" r="3" fill="#5b9dff"/><circle cx="35" cy="31" r="3" fill="#62d9b0"/></svg><div><strong>یاخته‌شناسی</strong><small>ساختار و عملکرد سلول</small></div></div><div class="bio-card"><svg viewBox="0 0 48 48" fill="none"><path d="M10 4c28 10 28 30 0 40M38 4C10 14 10 34 38 44M14 11h20M9 20h30M9 29h30M14 38h20" stroke="#59d5e3" stroke-width="2.5" stroke-linecap="round"/></svg><div><strong>ژنتیک و DNA</strong><small>رمزهای اطلاعات وراثتی</small></div></div><div class="bio-card"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5c10 0 17 8 17 18s-7 20-17 20S7 33 7 23 14 5 24 5Z" stroke="#9b7cff" stroke-width="2"/><path d="M24 12v23M16 18l8 5 8-5M16 29l8-6 8 6" stroke="#5ed8df" stroke-width="2"/></svg><div><strong>زیست‌فناوری</strong><small>پیوند دانش زیست با فناوری</small></div></div></section>
-<footer class="footer">ARKO Biology Learning Space<br>ارائه شده توسط عرفان قاسمی · © 2026</footer>
+<footer class="footer">🧬 ARKO Biology Learning Space<br>ارائه شده توسط عرفان قاسمی · © 2026</footer>
 </main><div class="toast" id="toast"></div>
 <script>
 const $=id=>document.getElementById(id);
@@ -71,7 +119,7 @@ const h=location.hash.match(/#data=([^&]+)/);if(h){try{let shared=JSON.parse(dec
 function persist(){try{localStorage.setItem(key,JSON.stringify(resources))}catch{}}
 function render(){ $("gradeTitle").textContent="زیست "+grade;$("countLabel").textContent=resources.filter(x=>x.grade===grade&&x.kind===kind).length+" منبع";
 $("resourceList").innerHTML="";let arr=resources.filter(x=>x.grade===grade&&x.kind===kind);
-if(!arr.length){$("resourceList").innerHTML='<div class="empty">هنوز منبعی در این قسمت ثبت نشده است.<br>از فرم پایین برای افزودن لینک کتاب، جزوه یا آزمون استفاده کن 🌱</div>';return}
+if(!arr.length){$("resourceList").innerHTML='<div class="empty">این قفسه فعلاً خالی است 🌱<br>به‌زودی منابع این بخش اینجا قرار می‌گیرند.</div>';return}
 arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),s=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;s.textContent="زیست "+x.grade+" · "+x.kind;info.append(b,s);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)})}
 function toast(t){$("toast").textContent=t;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2400)}
 document.querySelectorAll(".grade").forEach(b=>b.addEventListener("click",()=>{grade=b.dataset.grade;document.querySelectorAll(".grade").forEach(x=>x.classList.toggle("active",x===b));render();$("learning").scrollIntoView({behavior:"smooth",block:"start"})}));
