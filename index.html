@@ -63,6 +63,35 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .tool{border-radius:12px}.tool button:hover,.btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
 @media(max-width:850px){.hero-next{grid-template-columns:1fr;min-height:auto}.hero-visual{height:270px;grid-row:1}.hero-copy{grid-row:2}.hero-next h2{font-size:37px}}
 @media(max-width:560px){.hero-next{padding:25px 19px}.hero-visual{height:235px;transform:scale(.9);margin:-8px 0}.hero-next h2{font-size:31px}.hero-chips span{font-size:10px}.float-tag{font-size:8px}}
+
+/* ARCO knowledge hub */
+.bio-card{cursor:pointer;position:relative;transition:transform .22s,border-color .22s,box-shadow .22s;outline:none}
+.bio-card:focus-visible,.bio-card.topic-active{border-color:#69e4e4;box-shadow:0 0 0 1px #69e4e455,0 12px 35px #38cddd1c;transform:translateY(-2px)}
+.bio-card:focus-visible:after{content:"باز کردن مطالب";position:absolute;left:12px;bottom:8px;font-size:9px;color:#7de9ed}
+.topic-library{margin:24px 0 10px;padding:25px;border:1px solid #62518c88;border-radius:24px;background:linear-gradient(145deg,#11152cf7,#091426f7);box-shadow:0 20px 60px #0005;scroll-margin-top:20px}
+.topic-topline{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:20px}
+.topic-topline h2{font-size:clamp(21px,3vw,28px);margin:8px 0;font-weight:900}
+.topic-topline p{margin:0;color:#b9b5d3;font-size:13px;line-height:2}
+.topic-level{font-size:10px;color:#bcaaff;border:1px solid #a58aff55;border-radius:30px;padding:9px 12px;white-space:nowrap;background:#a58aff12}
+.topic-body{display:grid;gap:14px}
+.topic-intro{padding:17px 19px;border:1px solid #4b5580;border-radius:17px;background:linear-gradient(110deg,#1a2440,#12162d)}
+.topic-intro p{margin:0;color:#e2e4f8;line-height:2.15;font-size:13px}
+.topic-block{padding:17px 19px;border:1px solid #293d5a;border-radius:16px;background:#0c1729}
+.topic-block h3{margin:0 0 10px;font-size:16px;color:#8de9ee}
+.topic-block p{margin:7px 0;color:#c6c9dd;font-size:12px;line-height:2.15}
+.topic-block ul{margin:8px 0 0;padding:0 20px 0 0;color:#c6c9dd;font-size:12px;line-height:2.2}
+.topic-block li{padding:2px 0}
+.topic-highlight{padding:12px 15px;border-right:3px solid #a58aff;border-radius:9px;background:#a58aff12;color:#e3dcff;font-size:12px;line-height:2}
+.topic-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:10px}
+.topic-flow span{display:grid;place-items:center;text-align:center;min-height:58px;padding:9px;border:1px solid #4b5680;border-radius:12px;background:#171b35;color:#e4e4ff;font-size:12px}
+.topic-sources{margin-top:18px;padding-top:16px;border-top:1px solid #35415f}
+.topic-sources h3{font-size:15px;margin:0 0 12px}
+.source-links{display:flex;flex-wrap:wrap;gap:9px}
+.source-links a{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #3e6a7b;border-radius:10px;background:#102b3b;color:#8de8f0;text-decoration:none;font-size:11px;transition:.2s}
+.source-links a:hover{border-color:#a58aff;background:#282044}
+.source-note{color:#969bb9;font-size:10px;line-height:1.9;margin:12px 0 0}
+@media(max-width:600px){.topic-library{padding:17px}.topic-topline{flex-direction:column}.topic-level{display:none}.topic-flow{grid-template-columns:1fr}.topic-block{padding:15px}.topic-intro{padding:15px}}
+
 /* Telegram channel credit */
 .footer .telegram-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:5px;padding:4px 10px;border:1px solid #39aee533;border-radius:20px;color:#70cfff;text-decoration:none;font-size:10px;line-height:1.5;transition:background .2s,border-color .2s}
 .footer .telegram-link:hover{background:#229ed91c;border-color:#39aee588}
@@ -176,6 +205,12 @@ body:before{opacity:.09;background-size:58px 58px;background-image:linear-gradie
 <div class="tool"><strong>⏰ یادآور مطالعه</strong><p>برای خودت یک پیام کوتاه یادآوری تنظیم کن.</p><input id="reminderText" placeholder="مثلاً مرور گفتار دوم"><button id="reminderBtn">نمایش یادآور</button><div class="result" id="reminderResult"></div></div>
 </aside></section>
 <section class="bio-strip"><div class="bio-card"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#57d9df" stroke-width="2"/><circle cx="24" cy="24" r="7" fill="#9b7cff"/><circle cx="13" cy="15" r="3" fill="#5b9dff"/><circle cx="35" cy="31" r="3" fill="#62d9b0"/></svg><div><strong>یاخته‌شناسی</strong><small>ساختار و عملکرد سلول</small></div></div><div class="bio-card"><svg viewBox="0 0 48 48" fill="none"><path d="M10 4c28 10 28 30 0 40M38 4C10 14 10 34 38 44M14 11h20M9 20h30M9 29h30M14 38h20" stroke="#59d5e3" stroke-width="2.5" stroke-linecap="round"/></svg><div><strong>ژنتیک و DNA</strong><small>رمزهای اطلاعات وراثتی</small></div></div><div class="bio-card"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5c10 0 17 8 17 18s-7 20-17 20S7 33 7 23 14 5 24 5Z" stroke="#9b7cff" stroke-width="2"/><path d="M24 12v23M16 18l8 5 8-5M16 29l8-6 8 6" stroke="#5ed8df" stroke-width="2"/></svg><div><strong>زیست‌فناوری</strong><small>پیوند دانش زیست با فناوری</small></div></div></section>
+
+<section class="topic-library" id="topicLibrary" aria-live="polite">
+  <div class="topic-topline"><div><span class="universe-kicker">ARCO KNOWLEDGE HUB</span><h2 id="topicTitle">🔬 یاخته‌شناسی</h2><p id="topicLead">از کوچک‌ترین واحد زنده تا همکاری اندامک‌ها</p></div><span class="topic-level">مطالب آموزشی · نسخه ۱</span></div>
+  <div id="topicBody" class="topic-body"></div>
+  <div class="topic-sources"><h3>📚 منابع علمی و مطالعه بیشتر</h3><div id="topicLinks" class="source-links"></div><p class="source-note">مطالب این بخش به زبان ساده و با بازنویسی آموزشی تهیه شده‌اند؛ برای مطالعه عمیق‌تر، به منابع اصلی مراجعه کن.</p></div>
+</section>
 <footer class="footer">🧬 ARCO Future Science Universe<br>ارائه شده توسط عرفان قاسمی<br><a class="telegram-link" href="https://t.me/Arcobloooge" target="_blank" rel="noopener noreferrer" aria-label="کانال تلگرام ARCO"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 4.2 18.5 20c-.25 1.12-.92 1.4-1.87.88l-5.17-3.81-2.5 2.4c-.28.28-.52.52-1.07.52l.37-5.26 9.57-8.65c.42-.37-.09-.58-.65-.21L5.35 13.2.25 11.6c-1.1-.35-1.12-1.1.23-1.63L20.4 2.3c.92-.34 1.73.22 1.4 1.9Z"/></svg><span>کانال تلگرام ARCO</span></a><br><span>© 2026</span></footer>
 </main><div class="toast" id="toast"></div>
 <script>
@@ -201,6 +236,62 @@ $("percentBtn").addEventListener("click",()=>{let c=+$("correct").value||0,w=+$(
 $("saveNote").addEventListener("click",()=>{try{localStorage.setItem("arko-notes", $("notes").value);$("noteStatus").textContent="یادداشت روی این دستگاه ذخیره شد ✓"}catch{$("noteStatus").textContent="ذخیره‌سازی در این مرورگر در دسترس نیست."}});
 try{$("notes").value=localStorage.getItem("arko-notes")||""}catch{}
 $("reminderBtn").addEventListener("click",()=>{$("reminderResult").textContent=$("reminderText").value.trim()||"اول متن یادآور را بنویس.";if($("reminderText").value.trim())toast("یادآور: "+$("reminderText").value.trim())});
+
+const topicData={
+ cell:{
+  title:"🔬 یاخته‌شناسی",
+  lead:"از کوچک‌ترین واحد زنده تا همکاری اندامک‌ها",
+  intro:"یاخته یا سلول، کوچک‌ترین واحدی است که ویژگی‌های بنیادین حیات را نشان می‌دهد. بعضی جانداران مانند بسیاری از باکتری‌ها تک‌یاخته‌ای‌اند و بدن جانداران پرسلولی از یاخته‌های فراوان و تخصص‌یافته ساخته شده است.",
+  blocks:[
+   ["۱) نظریه یاخته‌ای",["همه جانداران از یک یا چند یاخته ساخته شده‌اند.","یاخته، واحد بنیادی ساختار و عملکرد در جانداران است.","یاخته‌های جدید از یاخته‌های پیشین به وجود می‌آیند."]],
+   ["۲) دو الگوی اصلی سازمان یاخته‌ای",["پروکاریوتی: هستهٔ غشادار ندارد؛ مادهٔ ژنتیکی در ناحیه‌ای از سیتوپلاسم قرار دارد. باکتری‌ها و آرکی‌ها در این گروه‌اند.","یوکاریوتی: هستهٔ غشادار و اندامک‌های غشادار دارد؛ یاخته‌های جانوری، گیاهی، قارچی و آغازیان یوکاریوتی‌اند."]],
+   ["۳) اجزای مهم یاختهٔ یوکاریوتی",["غشای پلاسمایی: مرز انتخاب‌پذیر یاخته و تنظیم‌کنندهٔ تبادل مواد با محیط است.","سیتوپلاسم: سیتوزول به‌همراه اندامک‌ها و ساختارهای درون آن را دربرمی‌گیرد.","هسته: بخش عمدهٔ DNA یاخته را نگهداری می‌کند و در تنظیم فعالیت‌های یاخته نقش دارد.","ریبوزوم: محل ساخت پروتئین است؛ در یاخته‌های پروکاریوتی و یوکاریوتی وجود دارد.","میتوکندری: در بسیاری از یاخته‌های یوکاریوتی در فرایندهای آزادسازی انرژی نقش دارد.","شبکهٔ آندوپلاسمی و دستگاه گلژی: در ساخت، تغییر، بسته‌بندی و جابه‌جایی برخی مولکول‌ها مشارکت می‌کنند.","لیزوزوم: در گوارش درون‌یاخته‌ای و بازیافت مواد نقش دارد؛ کلروپلاست در یاخته‌های فتوسنتزکننده محل فتوسنتز است."]],
+   ["۴) تفاوت یاختهٔ گیاهی و جانوری",["یاختهٔ گیاهی معمولاً دیوارهٔ سلولزی، واکوئل مرکزی بزرگ و در یاخته‌های فتوسنتزکننده کلروپلاست دارد.","یاختهٔ جانوری دیوارهٔ سلولی و کلروپلاست ندارد؛ شکل و اندازهٔ اندامک‌ها در انواع یاخته‌های جانوری می‌تواند متفاوت باشد."]],
+   ["۵) اندازه و سطح تبادل",["با افزایش اندازهٔ یاخته، نسبت سطح به حجم معمولاً کاهش می‌یابد. این موضوع می‌تواند تبادل مواد با محیط را محدود کند و یکی از دلایل کوچک‌ماندن بسیاری از یاخته‌هاست."]]
+  ],
+  note:"نکتهٔ مفهومی: پروکاریوتی بودن به معنی نداشتن DNA یا ریبوزوم نیست؛ پروکاریوت‌ها هر دو را دارند، اما هستهٔ غشادار ندارند.",
+  links:[["OpenStax · نظریه و مطالعهٔ یاخته","https://openstax.org/books/biology-2e/pages/4-1-studying-cells"],["OpenStax · یاخته‌های پروکاریوتی","https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells"],["OpenStax · یاخته‌های یوکاریوتی","https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"],["OpenStax · اندامک‌ها","https://openstax.org/books/anatomy-and-physiology-2e/pages/3-2-the-cytoplasm-and-cellular-organelles"],["OpenStax · غشای یاخته","https://openstax.org/books/biology-2e/pages/5-1-components-and-structure"]]
+ },
+ dna:{
+  title:"🧬 ژنتیک و DNA",
+  lead:"چگونه اطلاعات وراثتی ذخیره، خوانده و منتقل می‌شوند؟",
+  intro:"ژنتیک شاخه‌ای از زیست‌شناسی است که وراثت و تفاوت‌های وراثتی را بررسی می‌کند. DNA مولکولی است که بخش بزرگی از اطلاعات لازم برای رشد و عملکرد جاندار را در خود نگه می‌دارد؛ اما بروز صفات معمولاً حاصل برهم‌کنش ژن‌ها و محیط است.",
+  blocks:[
+   ["۱) از DNA تا کروموزوم",["DNA از دو رشتهٔ مکمل تشکیل شده که مارپیچ دوگانه می‌سازند.","چهار باز آلی DNA عبارت‌اند از آدنین (A)، تیمین (T)، سیتوزین (C) و گوانین (G). در DNA دورشته‌ای، A با T و C با G جفت می‌شود.","DNA همراه با پروتئین‌ها سازمان می‌یابد و کروموزوم را می‌سازد. در بیشتر یاخته‌های بدن انسان ۲۳ جفت کروموزوم وجود دارد."]],
+   ["۲) ژن، الل و ژنوم",["ژن بخشی از DNA است که اطلاعات ساخت یک RNA یا محصول عملکردی را دربرمی‌گیرد؛ بسیاری از ژن‌ها دستور ساخت پروتئین را دارند.","الل، شکل‌های متفاوت یک ژن در جایگاه مشخصی از ژنوم است.","ژنوم، مجموعهٔ کامل اطلاعات ژنتیکی یک جاندار یا یاخته است."]],
+   ["۳) همانندسازی و بیان ژن",["پیش از تقسیم یاخته، DNA همانندسازی می‌شود تا اطلاعات ژنتیکی به یاخته‌های حاصل منتقل شود.","در رونویسی، اطلاعات یک بخش از DNA در قالب RNA نوشته می‌شود.","در ترجمه، ریبوزوم با استفاده از اطلاعات mRNA و کمک tRNA زنجیرهٔ آمینواسیدی را می‌سازد.","مسیر کلی اطلاعات در بسیاری از ژن‌های پروتئین‌ساز: DNA ← رونویسی به RNA ← ترجمه به پروتئین."]],
+   ["۴) وراثت و تنوع",["در جانداران دارای تولیدمثل جنسی، هر فرد معمولاً یک نسخه از هر کروموزوم همتا را از هر یک از والدین دریافت می‌کند.","در الگوهای سادهٔ مندلی، الل‌ها می‌توانند رابطهٔ غالب و مغلوب داشته باشند؛ اما همهٔ صفات فقط با یک ژن کنترل نمی‌شوند.","جهش، تغییر در توالی DNA است. اثر آن می‌تواند بی‌اثر، زیان‌بار یا در شرایطی سودمند باشد.","بسیاری از صفات حاصل اثر هم‌زمان چندین ژن و عوامل محیطی‌اند."]]
+  ],
+  note:"یادآوری: ژن، DNA و کروموزوم مترادف نیستند. ژن بخشی از DNA است و کروموزوم ساختاری سازمان‌یافته شامل DNA و پروتئین‌هاست.",
+  links:[["MedlinePlus · DNA چیست؟","https://medlineplus.gov/genetics/understanding/basics/dna/"],["NHGRI · واژه‌نامهٔ ژنتیک","https://www.genome.gov/genetics-glossary"],["NHGRI · ژن","https://www.genome.gov/genetics-glossary/Gene?id=70"],["NHGRI · کروموزوم","https://www.genome.gov/genetics-glossary/Chromosome"],["WHO · ژنومیک","https://www.who.int/health-topics/genomics"]]
+ },
+ biotech:{
+  title:"🧫 زیست‌فناوری",
+  lead:"استفاده از سامانه‌های زیستی برای حل مسئله‌های واقعی",
+  intro:"زیست‌فناوری به بهره‌گیری از جانداران، یاخته‌ها، آنزیم‌ها یا فرایندهای زیستی برای تولید محصول یا ارائهٔ خدمت گفته می‌شود. این حوزه از فرایندهای سنتی مانند تخمیر تا فناوری‌های نوین DNA نوترکیب و پزشکی زیستی را دربرمی‌گیرد.",
+  blocks:[
+   ["۱) زیست‌فناوری سنتی و نوین",["در زیست‌فناوری سنتی، از فعالیت جانداران یا آنزیم‌ها در فرایندهایی مانند تهیهٔ نان، ماست و برخی مواد غذایی استفاده می‌شود.","زیست‌فناوری نوین از دانش سلولی و مولکولی، مهندسی ژنتیک، کشت سلول و روش‌های تحلیل داده برای کاربردهای دقیق‌تر بهره می‌گیرد."]],
+   ["۲) DNA نوترکیب و تولید پروتئین",["DNA نوترکیب به DNAای گفته می‌شود که با روش‌های آزمایشگاهی، قطعه‌های مشخصی از DNA در آن کنار هم قرار گرفته‌اند.","یکی از کاربردهای شناخته‌شده، تولید انسولین انسانی با کمک میکروارگانیسم‌های مهندسی‌شده است؛ محصول نهایی پس از تولید، جداسازی و خالص‌سازی می‌شود.","این فناوری در تولید برخی هورمون‌ها، پروتئین‌های درمانی و ابزارهای پژوهشی نیز کاربرد دارد."]],
+   ["۳) کاربردهای مهم",["پزشکی: تولید داروهای زیستی، برخی واکسن‌ها، روش‌های تشخیصی و بعضی رویکردهای ژن‌درمانی.","کشاورزی: بررسی و به‌کارگیری ویژگی‌های ژنتیکی برای بهبود مقاومت یا کیفیت محصولات، همراه با ارزیابی ایمنی و پیامدهای زیست‌محیطی.","صنعت و محیط‌زیست: استفاده از آنزیم‌ها و میکروارگانیسم‌ها در تولید، فرآوری و برخی روش‌های زیست‌پالایی."]],
+   ["۴) ویرایش ژنوم و مسئولیت علمی",["ویرایش ژنوم به معنی ایجاد تغییر هدفمند در DNA است؛ ابزارهایی مانند CRISPR در پژوهش‌های زیستی کاربرد دارند.","کاربردهای پزشکی و محیطی باید از نظر ایمنی، اثربخشی، پیامدهای ناخواسته، عدالت دسترسی و ملاحظات اخلاقی بررسی شوند.","نتایج پژوهشی اولیه به‌تنهایی به معنی آماده‌بودن یک فناوری برای استفادهٔ عمومی یا درمانی نیست."]]
+  ],
+  note:"نمونهٔ ملموس: در تولید انسولین نوترکیب، از اطلاعات ژنتیکی مربوط به انسولین برای واداشتن سامانهٔ زیستی به ساخت پروتئین استفاده می‌شود؛ سپس پروتئین باید خالص‌سازی و از نظر کیفیت بررسی شود.",
+  links:[["NHGRI · مهندسی ژنتیک","https://www.genome.gov/genetics-glossary/Genetic-Engineering"],["NHGRI · DNA نوترکیب","https://www.genome.gov/genetics-glossary/Recombinant-DNA-Technology"],["کتابخانهٔ ملی پزشکی آمریکا · تولید انسولین","https://www.nlm.nih.gov/exhibition/fromdnatobeer/exhibition-interactive/recombinant-DNA/recombinant-dna-technology.html"],["WHO · داروهای زیستی","https://www.who.int/health-topics/biologicals"],["WHO · ویرایش ژنوم انسان","https://www.who.int/health-topics/human-genome-editing"]]
+ }
+};
+function showTopic(id){
+ const t=topicData[id];if(!t)return;
+ document.querySelectorAll(".bio-card").forEach(c=>c.classList.toggle("topic-active",c.dataset.topic===id));
+ $("topicTitle").textContent=t.title;$("topicLead").textContent=t.lead;
+ const body=$("topicBody");body.innerHTML="";
+ const intro=document.createElement("div");intro.className="topic-intro";const p=document.createElement("p");p.textContent=t.intro;intro.append(p);body.append(intro);
+ t.blocks.forEach(([heading,items])=>{const box=document.createElement("article");box.className="topic-block";const h=document.createElement("h3");h.textContent=heading;const ul=document.createElement("ul");items.forEach(item=>{const li=document.createElement("li");li.textContent=item;ul.append(li)});box.append(h,ul);body.append(box)});
+ const note=document.createElement("div");note.className="topic-highlight";note.textContent=t.note;body.append(note);
+ const links=$("topicLinks");links.innerHTML="";t.links.forEach(([label,url])=>{const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=label+" ↗";links.append(a)});
+}
+document.querySelectorAll(".bio-card").forEach((card,i)=>{const ids=["cell","dna","biotech"];card.dataset.topic=ids[i];card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-controls","topicLibrary");card.addEventListener("click",()=>{showTopic(card.dataset.topic);$("topicLibrary").scrollIntoView({behavior:"smooth",block:"start"})});card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();card.click()}})});
+showTopic("cell");
+
 load();render();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
