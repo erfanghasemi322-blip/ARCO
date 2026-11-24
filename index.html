@@ -617,7 +617,7 @@ function render(){
    empty.innerHTML='<span class="written-empty-icon">✦</span><strong>این فضا آماده دریافت منابع است</strong><p>محتوای مربوط به این بخش پس از افزودن منابع، در همین قفسه نمایش داده می‌شود.</p><span class="written-empty-note">هنوز منبعی در این بخش ثبت نشده است</span>';
    $("resourceList").append(empty);return;
   }
-  arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent="زیست "+x.grade+" · "+chosen.title;info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)});
+  arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent="زیست "+x.grade+" · "+chosen.title;info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=x.sourceLabel?"بازکردن PDF ↗":"مشاهده ↗";d.append(info,a);$("resourceList").append(d)});
   return;
  }
  eduSection=null;
@@ -659,10 +659,15 @@ function render(){
   return;
  }
  examSection=null;
- const arr=resources.filter(x=>x.grade===grade&&x.kind===kind);
+ const officialTextbooks={
+ "دهم":{grade:"دهم",kind:"کتاب",title:"زیست‌شناسی (۱) · پایه دهم",sourceLabel:"PDF رسمی کتاب درسی",url:"https://www.chap.sch.ir/sites/default/files/lbooks/1403-1404/40/C110216.pdf"},
+ "یازدهم":{grade:"یازدهم",kind:"کتاب",title:"زیست‌شناسی (۲) · پایه یازدهم",sourceLabel:"PDF رسمی کتاب درسی",url:"https://www.chap.sch.ir/sites/default/files/lbooks/1402-1403/41/C111216.pdf"},
+ "دوازدهم":{grade:"دوازدهم",kind:"کتاب",title:"زیست‌شناسی (۳) · پایه دوازدهم",sourceLabel:"PDF رسمی کتاب درسی",url:"https://www.chap.sch.ir/sites/default/files/lbooks/1403-1404/712/C112216.pdf"}
+};
+const arr=kind==="کتاب"&&officialTextbooks[grade]?[officialTextbooks[grade]]:resources.filter(x=>x.grade===grade&&x.kind===kind);
  $("countLabel").textContent=arr.length+" منبع";
  if(!arr.length){$("resourceList").innerHTML='<div class="empty">این قفسه فعلاً خالی است 🌱<br>به‌زودی منابع این بخش اینجا قرار می‌گیرند.</div>';return}
- arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent="زیست "+x.grade+" · "+x.kind;info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)})
+ arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent=x.sourceLabel||("زیست "+x.grade+" · "+x.kind);info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)})
 }
 $("resourceList").addEventListener("click",e=>{const edu=e.target.closest("[data-edu-section]");if(edu){eduSection=edu.dataset.eduSection;render();return}if(e.target.closest("[data-edu-back]")){eduSection=null;render();return}const card=e.target.closest("[data-exam-section]");if(card){examSection=card.dataset.examSection;render();return}if(e.target.closest("[data-exam-back]")){examSection=null;render()}});
 function toast(t){$("toast").textContent=t;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2400)}
