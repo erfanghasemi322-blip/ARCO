@@ -380,6 +380,18 @@ body:after{
 .quiz-empty{padding:18px;border:1px dashed #596b8b;border-radius:14px;color:#c3cbe0;font-size:12px;line-height:2}
 @media(max-width:620px){.quiz-groups{grid-template-columns:1fr}.quiz-panel{padding:15px}.quiz-question{font-size:14px}}
 </style>
+<style id="arco-summary-cinematic">
+.summary-hero{position:relative;display:flex;align-items:center;justify-content:space-between;gap:22px;overflow:hidden;min-height:205px;margin:4px 0 18px;padding:27px 30px;border:1px solid #8c78ff66;border-radius:24px;background:radial-gradient(ellipse at 82% 50%,#6e48c344,transparent 38%),linear-gradient(115deg,#11172d,#171333 62%,#092a3b);box-shadow:0 22px 60px #0006,inset 0 1px #ffffff18}
+.summary-hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 35%,#7ce8f00b 70%,transparent)}
+.summary-hero-copy{position:relative;z-index:2;max-width:700px}.summary-hero h3{margin:9px 0 8px;font-size:clamp(20px,3vw,29px);font-weight:900;line-height:1.7;color:#f4f1ff}.summary-hero h3 b{color:#75e4e7;text-shadow:0 0 22px #5ce5e655}.summary-hero p{margin:0;color:#c0c8df;font-size:12px;line-height:2.2}.summary-metrics{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.summary-metrics span{padding:7px 12px;border:1px solid #ffffff20;border-radius:30px;background:#ffffff0b;color:#cbd6ec;font-size:10px}.summary-metrics b{color:#80e8e8;font-size:13px;margin-left:4px}
+.summary-hero-art{position:relative;flex:none;width:145px;height:145px;display:grid;place-items:center;border:1px solid #b49aff66;border-radius:50%;background:radial-gradient(circle at 35% 30%,#c2aaff55,#493a8055 48%,#0b2035 75%);box-shadow:0 0 50px #886bff33,inset 0 0 30px #ffffff12;transform:rotate(-12deg)}.summary-hero-art:before,.summary-hero-art:after{content:"";position:absolute;width:170px;height:65px;border:1px solid #63e3e477;border-radius:50%;transform:rotate(45deg)}.summary-hero-art:after{transform:rotate(-45deg);border-color:#b59aff88}.summary-hero-art span{font-size:22px;font-weight:900;letter-spacing:4px;color:#fff;text-shadow:0 0 20px #a58aff}.summary-hero-art i{position:absolute;width:12px;height:12px;border-radius:50%;background:#72f0e6;box-shadow:0 0 18px #72f0e6;top:15px;right:23px}.summary-hero-art b{position:absolute;bottom:18px;left:20px;color:#e6cfff;font-size:22px}
+.summary-toolbar{display:grid;grid-template-columns:minmax(200px,1fr) auto auto;align-items:center;gap:10px;margin:0 0 14px;padding:12px;border:1px solid #34466a;border-radius:17px;background:linear-gradient(110deg,#111c30,#11152a)}.summary-search{display:flex;align-items:center;gap:9px;min-width:0;padding:0 12px;border:1px solid #46547a;border-radius:12px;background:#080f20}.summary-search span{font-size:23px;color:#7de6e6}.summary-search input{width:100%;min-width:0;padding:11px 0;border:0;outline:0;background:transparent;color:#f4f4ff;font:inherit;font-size:12px}.summary-search input::placeholder{color:#8794b1}.summary-tools{display:flex;gap:7px}.summary-tools button{padding:10px 12px;border:1px solid #6557a1;border-radius:10px;background:#30264d;color:#e4dcff;font-size:10px;font-weight:700}.summary-tools button:hover{background:#493778;border-color:#a58aff}.summary-result-count{color:#91dfe5;font-size:10px;white-space:nowrap}
+.summary-chapters{gap:13px}.summary-chapter{border-color:#394b70;border-radius:19px;background:linear-gradient(145deg,#151f38,#0b1426);transition:border-color .2s,box-shadow .2s}.summary-chapter[open]{border-color:#7667bd;box-shadow:0 14px 35px #0004,0 0 0 1px #8c78ff16}.summary-chapter>summary{min-height:66px;padding:15px 19px;background:linear-gradient(90deg,#ffffff05,transparent);font-size:13px}.summary-chapter>summary:after{display:grid;place-items:center;width:27px;height:27px;border:1px solid #65dfe455;border-radius:9px;background:#53dce10d;font-size:16px}.summary-chapter-title{display:flex;align-items:center;gap:11px}.summary-chapter-title i{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:linear-gradient(145deg,#6954a7,#174c65);color:#e8e3ff;font-size:10px;font-style:normal}.summary-chapter>summary small{background:#ffffff0a;color:#a9c4df}
+.summary-talks{padding:2px 15px 16px;gap:11px}.summary-talk{position:relative;padding:17px 18px;border:1px solid #344765;border-radius:15px;background:linear-gradient(135deg,#101d32,#0a1424);transition:transform .2s,border-color .2s}.summary-talk:hover{transform:translateY(-2px);border-color:#6d9bb3}.summary-talk h4{display:flex;align-items:center;gap:9px;margin-bottom:10px;color:#f0edff;font-size:14px}.summary-talk h4 span{flex:none;padding:5px 9px;border:1px solid #8d7aff55;border-radius:8px;background:#8d7aff16;color:#c9bcff;font-size:9px}.summary-talk h4 b{font-weight:800}.summary-talk p{color:#d0daeb;font-size:12px;line-height:2.35;text-align:justify}.summary-tags{margin-top:13px;padding-top:11px;border-top:1px solid #ffffff10}.summary-tags span{padding:6px 10px;border-color:#3c849066;background:#12334366;color:#91e4e8;font-size:9px}
+.summary-talk[hidden],.summary-chapter[hidden]{display:none!important}
+@media(max-width:700px){.summary-hero{min-height:0;padding:21px}.summary-hero-art{width:90px;height:90px;transform:scale(.82)}.summary-hero-art:before,.summary-hero-art:after{width:110px;height:45px}.summary-hero-art span{font-size:15px}.summary-toolbar{grid-template-columns:1fr}.summary-tools{display:grid;grid-template-columns:1fr 1fr}.summary-result-count{padding:2px 4px}.summary-talk h4{align-items:flex-start;flex-direction:column;gap:6px}}
+@media(max-width:460px){.summary-hero-art{display:none}.summary-hero{padding:19px}.summary-hero h3{font-size:20px}.summary-chapter>summary{padding:13px}.summary-talks{padding:2px 9px 11px}.summary-talk{padding:14px}}
+</style>
 </head>
 <body><div id="arcoGate" dir="rtl"><div class="gate-card"><div class="gate-logo">A</div><h1>ARCO</h1><p class="gate-sub">به جهان علمی آرکو خوش آمدی.<br>برای ورود، کد دسترسی را وارد کن.</p><form id="arcoGateForm"><label for="arcoGateCode">کد دسترسی</label><input id="arcoGateCode" type="password" placeholder="کد ورود را وارد کن" autocomplete="off"><button type="submit">ورود به آرکو ←</button><p class="gate-error" id="arcoGateError" aria-live="polite"></p></form><div class="gate-foot">ARCO · PRIVATE ACCESS</div></div></div><script>(function(){const gate=document.getElementById("arcoGate"),style=document.getElementById("arcoLockStyle"),form=document.getElementById("arcoGateForm"),input=document.getElementById("arcoGateCode"),error=document.getElementById("arcoGateError");function unlock(){try{localStorage.setItem("arco-access-granted","yes")}catch(e){}if(style)style.remove();if(gate)gate.remove()}try{if(localStorage.getItem("arco-access-granted")==="yes"){unlock();return}}catch(e){}form.addEventListener("submit",function(e){e.preventDefault();if(input.value.trim()==="ARCO-1405"){unlock()}else{error.textContent="کد واردشده درست نیست. دوباره تلاش کن.";input.value="";input.focus()}})})();</script>
 <main class="shell">
@@ -481,18 +493,23 @@ function render(){
 
   if(eduSection==="summary"){
     const chapters=textbookSummaries[grade]||[];
-    $("countLabel").textContent=chapters.reduce((n,c)=>n+c[1].length,0)+" خلاصه گفتار";
-    const intro=document.createElement("div");intro.className="edu-intro";
-    intro.innerHTML='<span class="edu-kicker">ARCO · TEXTBOOK SUMMARIES</span><h3>خلاصه‌های فصل‌به‌فصل زیست '+grade+'</h3><p>هر گفتار به‌صورت مستقل و مطابق ترتیب کتاب درسی دسته‌بندی شده است. برای مطالعه، فصل موردنظر را باز کن.</p>';
+    const total=chapters.reduce((n,c)=>n+c[1].length,0);
+    $("countLabel").textContent=total+" خلاصه گفتار";
+    const intro=document.createElement("section");intro.className="summary-hero";
+    intro.innerHTML='<div class="summary-hero-orb"></div><div class="summary-hero-copy"><span class="edu-kicker">ARCO · KNOWLEDGE ARCHIVE</span><h3>کتابخانه هوشمند خلاصه‌های زیست <b>'+grade+'</b></h3><p>هر فصل، یک مسیر روشن برای مرور. گفتارها را باز کن، نکته‌ها را بخوان و با جست‌وجو مستقیم به مبحث دلخواهت برس.</p><div class="summary-metrics"><span><b>'+chapters.length+'</b> فصل</span><span><b>'+total+'</b> گفتار</span><span><b>۳</b> پایه در آرشیو</span></div></div><div class="summary-hero-art" aria-hidden="true"><span>DNA</span><i></i><b>✦</b></div>';
     $("resourceList").append(intro);
+    const toolbar=document.createElement("div");toolbar.className="summary-toolbar";
+    toolbar.innerHTML='<label class="summary-search"><span>⌕</span><input type="search" id="summarySearch" placeholder="جست‌وجوی عنوان گفتار یا کلیدواژه..." aria-label="جست‌وجو در خلاصه‌ها"></label><div class="summary-tools"><button type="button" id="summaryOpenAll">بازکردن همه فصل‌ها</button><button type="button" id="summaryCloseAll">بستن همه</button></div><span class="summary-result-count" id="summaryResultCount">نمایش '+total+' گفتار</span>';
+    $("resourceList").append(toolbar);
     const list=document.createElement("div");list.className="summary-chapters";
     chapters.forEach((chapter,ci)=>{
-      const details=document.createElement("details");details.className="summary-chapter";if(ci===0)details.open=true;
-      const summary=document.createElement("summary");summary.innerHTML='<span>'+chapter[0]+'</span><small>'+chapter[1].length+' گفتار</small>';details.append(summary);
+      const details=document.createElement("details");details.className="summary-chapter";details.dataset.chapter=chapter[0];if(ci===0)details.open=true;
+      const summary=document.createElement("summary");summary.innerHTML='<span class="summary-chapter-title"><i>0'+(ci+1)+'</i><span>'+chapter[0]+'</span></span><small>'+chapter[1].length+' گفتار</small>';details.append(summary);
       const talks=document.createElement("div");talks.className="summary-talks";
       chapter[1].forEach((talk,ti)=>{
         const article=document.createElement("article");article.className="summary-talk";
-        const h=document.createElement("h4");h.textContent="گفتار "+(ti+1)+" · "+talk[0];
+        article.dataset.search=(chapter[0]+" "+talk[0]+" "+talk[1]+" "+talk[2]).toLocaleLowerCase("fa");
+        const h=document.createElement("h4");h.innerHTML='<span>گفتار '+(ti+1)+'</span><b>'+talk[0]+'</b>';
         const p=document.createElement("p");p.textContent=talk[1];
         const tags=document.createElement("div");tags.className="summary-tags";
         talk[2].split("؛").forEach(tag=>{const span=document.createElement("span");span.textContent=tag.trim();tags.append(span)});
@@ -500,7 +517,19 @@ function render(){
       });
       details.append(talks);list.append(details);
     });
-    $("resourceList").append(list);return;
+    $("resourceList").append(list);
+    const search=$("summarySearch"),result=$("summaryResultCount");
+    const filter=()=>{const q=search.value.trim().toLocaleLowerCase("fa");let visible=0;
+      list.querySelectorAll(".summary-chapter").forEach(ch=>{let inChapter=0;
+        ch.querySelectorAll(".summary-talk").forEach(card=>{const show=!q||card.dataset.search.includes(q);card.hidden=!show;if(show){visible++;inChapter++}});
+        ch.hidden=!!q&&!inChapter;if(q&&inChapter)ch.open=true;
+      });
+      result.textContent="نمایش "+visible+" از "+total+" گفتار";
+    };
+    search.addEventListener("input",filter);
+    $("summaryOpenAll").addEventListener("click",()=>list.querySelectorAll(".summary-chapter").forEach(x=>{if(!x.hidden)x.open=true}));
+    $("summaryCloseAll").addEventListener("click",()=>list.querySelectorAll(".summary-chapter").forEach(x=>x.open=false));
+    return;
   }
 
   const arr=resources.filter(x=>x.grade===grade&&x.kind===kind&&(x.section||"study")===eduSection);
