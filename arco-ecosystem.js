@@ -116,5 +116,14 @@ function mountMobileDock(){
 }
 mountMobileDock();
 
+
+function initNexusExperience(){
+ const shell=document.querySelector('.shell');if(!shell)return;
+ const brand=shell.querySelector('.brand');if(brand&&!document.querySelector('.arco-nexus-status')){const s=document.createElement('div');s.className='arco-nexus-status';s.innerHTML='<i aria-hidden="true"></i><span>ARCO NEXUS · BIOLOGY SYSTEM ONLINE</span>';brand.insertAdjacentElement('afterend',s)}
+ const targets=[...document.querySelectorAll('.hero-next,.universe-section,.subject-card,.section-title,.main-panel,.tools-section,.tool-card,#arcoEcosystem,.topic-library')];
+ if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('nexus-visible');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -35px 0px'});targets.forEach((el,i)=>{if(i>0){el.classList.add('nexus-reveal');io.observe(el)}})}
+}
+initNexusExperience();
+
 stats();
 })();
