@@ -176,6 +176,103 @@ body:before{opacity:.09;background-size:58px 58px;background-image:linear-gradie
 @media(max-width:950px){.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.tools-section{padding:17px}.tools-heading{align-items:flex-start}.tools-heading h2{font-size:20px}.tools-count{font-size:10px;padding:7px 9px}.tools-grid{grid-template-columns:1fr}.tool-card p{min-height:0}}
 
+
+/* ARCO 2026 visual polish: cinematic depth, accessible motion and responsive finish */
+:root{
+  --arco-glow:rgba(139,111,255,.24);
+  --arco-glass:rgba(12,16,37,.76);
+  --arco-edge:rgba(156,137,255,.28);
+}
+html{scroll-padding-top:112px;scrollbar-color:#7259bd #080916;scrollbar-width:thin}
+body{overflow-x:hidden}
+body:after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 72%,rgba(48,74,155,.10),transparent 52%),
+             linear-gradient(180deg,transparent 70%,rgba(4,5,15,.45));
+}
+.top{
+  position:sticky;top:10px;z-index:100;
+  border-color:rgba(174,151,255,.24);
+  background:rgba(8,8,24,.78);
+  box-shadow:0 12px 42px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.06);
+  transition:background .25s,border-color .25s,box-shadow .25s;
+}
+.top:focus-within,.top:hover{border-color:rgba(116,220,255,.42);box-shadow:0 16px 48px rgba(0,0,0,.42),0 0 28px rgba(117,91,255,.10)}
+.brand h1{text-shadow:0 0 24px rgba(160,130,255,.38)}
+.logo{position:relative;isolation:isolate}
+.logo:after{content:"";position:absolute;inset:-5px;border:1px solid rgba(137,220,255,.25);border-radius:23px;z-index:-1;animation:arcoHalo 4s ease-in-out infinite}
+.hero-next{
+  border-color:rgba(172,145,255,.48);
+  box-shadow:0 34px 100px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.12),0 0 70px rgba(102,77,205,.10);
+}
+.hero-next:before{opacity:.9}
+.hero-copy{max-width:710px}
+.hero-next h2{letter-spacing:-.7px;text-shadow:0 8px 34px rgba(0,0,0,.25)}
+.hero-chips span{transition:transform .22s,border-color .22s,background .22s}
+.hero-chips span:hover{transform:translateY(-3px);border-color:rgba(100,224,255,.6);background:rgba(92,125,220,.16)}
+.section-title{position:relative}
+.section-title:after{content:"";height:1px;flex:1;max-width:110px;margin-right:12px;background:linear-gradient(90deg,rgba(112,221,255,.55),transparent)}
+.grade,.subject-card,.tool-card,.bio-card,.main-panel,.side-panel,.topic-library{
+  box-shadow:0 18px 48px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.035);
+}
+.grade,.subject-card,.tool-card,.bio-card{transform:translateZ(0);will-change:transform}
+.grade{transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s,box-shadow .28s,background .28s}
+.grade:hover{transform:translateY(-7px) scale(1.012);box-shadow:0 24px 54px rgba(79,61,168,.25),inset 0 1px rgba(255,255,255,.08)}
+.grade.active{background:linear-gradient(145deg,rgba(46,40,91,.96),rgba(12,39,59,.98));border-color:#a58aff}
+.subject-card{transition:transform .32s cubic-bezier(.2,.8,.2,1),border-color .28s,box-shadow .28s}
+.subject-card:focus-visible,.grade:focus-visible,.tab:focus-visible,.ghost:focus-visible,.btn:focus-visible,.tool-card button:focus-visible{
+  outline:2px solid #76e7ff;outline-offset:4px;
+}
+.tool-card{position:relative;overflow:hidden;transition:transform .28s,border-color .28s,box-shadow .28s}
+.tool-card:before{
+  content:"";position:absolute;inset:0 0 auto;height:2px;opacity:.75;
+  background:linear-gradient(90deg,transparent,#8c75ff,#4bdfff,transparent);
+  transform:scaleX(.25);transform-origin:center;transition:transform .3s;
+}
+.tool-card:hover:before{transform:scaleX(1)}
+.tool-card:hover{transform:translateY(-6px);border-color:rgba(117,221,255,.62);box-shadow:0 22px 48px rgba(0,0,0,.34),0 0 28px rgba(112,88,220,.12)}
+.tool-icon{box-shadow:0 10px 24px rgba(93,73,183,.25),inset 0 1px rgba(255,255,255,.22)}
+.main-panel,.side-panel,.topic-library{backdrop-filter:blur(16px)}
+.resource{transition:transform .22s,border-color .22s,background .22s,box-shadow .22s}
+.resource:hover{background:linear-gradient(100deg,rgba(24,43,68,.95),rgba(19,24,48,.95));box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.resource a,.source-links a{transition:transform .2s,background .2s,border-color .2s}
+.resource a:hover,.source-links a:hover{transform:translateY(-2px)}
+.tab{transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+.tab:hover{transform:translateY(-2px);border-color:rgba(120,218,255,.55)}
+.bio-card{transition:transform .25s,border-color .25s,box-shadow .25s}
+.bio-card:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(0,0,0,.3),0 0 25px rgba(89,213,227,.09)}
+.topic-block{transition:border-color .2s,transform .2s}
+.topic-block:hover{border-color:rgba(108,211,231,.42);transform:translateY(-2px)}
+.footer{border-top:1px solid rgba(157,139,226,.16)}
+#arcoProgress{
+  position:fixed;inset:0 0 auto;height:3px;width:100%;z-index:1000000;
+  transform:scaleX(0);transform-origin:right;
+  background:linear-gradient(90deg,#36dfff,#a879ff 55%,#e0b7ff);
+  box-shadow:0 0 14px rgba(117,190,255,.65);pointer-events:none;
+}
+.arco-reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.2,1)}
+.arco-reveal.arco-visible{opacity:1;transform:translateY(0)}
+@keyframes arcoHalo{0%,100%{opacity:.35;transform:scale(.98)}50%{opacity:.9;transform:scale(1.06)}}
+@media(max-width:850px){
+  .top{top:6px;margin-top:6px}
+  .hero-next{box-shadow:0 22px 65px rgba(0,0,0,.4),inset 0 1px rgba(255,255,255,.1)}
+}
+@media(max-width:560px){
+  html{scroll-padding-top:84px}
+  .top{border-radius:17px;padding:8px 10px}
+  .brand h1{font-size:25px}
+  .logo{width:48px;height:48px}
+  .hero-next{border-radius:24px}
+  .hero-chips{gap:7px}
+  .hero-chips span{padding:8px 10px}
+  .section-title:after{max-width:48px}
+  .grade:hover,.tool-card:hover,.bio-card:hover{transform:translateY(-2px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .arco-reveal{opacity:1;transform:none}
+}
+
 </style>
 <style id="arcoLockStyle">body> :not(#arcoGate){display:none!important}#arcoGate{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 18% 12%,#50328a66,transparent 42%),radial-gradient(ellipse at 90% 85%,#075c7866,transparent 40%),#050611;color:#f5f2ff;font-family:Vazirmatn,Tahoma,sans-serif}#arcoGate .gate-card{width:min(100%,430px);padding:34px 28px;border:1px solid #a879ff66;border-radius:26px;background:linear-gradient(145deg,#12132af2,#09182af5);box-shadow:0 25px 90px #000b,0 0 45px #815bff22;text-align:center}#arcoGate .gate-logo{width:66px;height:66px;margin:0 auto 17px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#b28aff,#5a38d8 48%,#16bce8);box-shadow:0 0 30px #8e61ff88;font-size:27px;font-weight:900;letter-spacing:2px}#arcoGate h1{margin:0;font-size:27px;letter-spacing:5px}#arcoGate .gate-sub{margin:8px 0 25px;color:#aeb8d4;font-size:13px;line-height:2}#arcoGate label{display:block;text-align:right;margin:0 2px 8px;color:#d9d7f0;font-size:12px}#arcoGate input{width:100%;padding:14px 15px;border:1px solid #55477d;border-radius:13px;background:#080d1c;color:#fff;outline:none;text-align:center;letter-spacing:2px;font-size:17px}#arcoGate input:focus{border-color:#a879ff;box-shadow:0 0 0 3px #a879ff22}#arcoGate button{width:100%;margin-top:13px;padding:13px;border:0;border-radius:13px;background:linear-gradient(100deg,#9875ff,#28bfd7);color:#fff;font-weight:800;font-size:14px;cursor:pointer}#arcoGate .gate-error{min-height:23px;margin:12px 0 0;color:#ff9aaf;font-size:12px}#arcoGate .gate-foot{margin-top:18px;color:#737e9d;font-size:10px;letter-spacing:1px}</style></head>
 <body><div id="arcoGate" dir="rtl"><div class="gate-card"><div class="gate-logo">A</div><h1>ARCO</h1><p class="gate-sub">به جهان علمی آرکو خوش آمدی.<br>برای ورود، کد دسترسی را وارد کن.</p><form id="arcoGateForm"><label for="arcoGateCode">کد دسترسی</label><input id="arcoGateCode" type="password" placeholder="کد ورود را وارد کن" autocomplete="off"><button type="submit">ورود به آرکو ←</button><p class="gate-error" id="arcoGateError" aria-live="polite"></p></form><div class="gate-foot">ARCO · PRIVATE ACCESS</div></div></div><script>(function(){const gate=document.getElementById("arcoGate"),style=document.getElementById("arcoLockStyle"),form=document.getElementById("arcoGateForm"),input=document.getElementById("arcoGateCode"),error=document.getElementById("arcoGateError");function unlock(){try{localStorage.setItem("arco-access-granted","yes")}catch(e){}if(style)style.remove();if(gate)gate.remove()}try{if(localStorage.getItem("arco-access-granted")==="yes"){unlock();return}}catch(e){}form.addEventListener("submit",function(e){e.preventDefault();if(input.value.trim()==="ARCO-1405"){unlock()}else{error.textContent="کد واردشده درست نیست. دوباره تلاش کن.";input.value="";input.focus()}})})();</script>
@@ -353,4 +450,43 @@ load();render();
   if(window.Lenis){const lenis=new Lenis({duration:1.15,smoothWheel:true});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);}
 })();
 </script>
+
+<script>
+/* ARCO polish interactions: reading progress and gentle section reveals */
+(function(){
+  const bar=document.createElement('div');
+  bar.id='arcoProgress';
+  bar.setAttribute('aria-hidden','true');
+  document.body.prepend(bar);
+  let ticking=false;
+  function paintProgress(){
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    const value=max>0?Math.min(1,Math.max(0,window.scrollY/max)):0;
+    bar.style.transform='scaleX('+value+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){window.requestAnimationFrame(paintProgress);ticking=true;}
+  },{passive:true});
+  paintProgress();
+
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const targets=document.querySelectorAll('.hero-next,.universe-heading,.subject-card,.section-title,.grade,.workspace,.tools-section,.bio-strip,.topic-library,.footer');
+  if(reduce||!('IntersectionObserver' in window)){targets.forEach(el=>el.classList.add('arco-visible'));return;}
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('arco-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08,rootMargin:'0px 0px -24px 0px'});
+  targets.forEach((el,index)=>{
+    el.classList.add('arco-reveal');
+    el.style.transitionDelay=(Math.min(index%4,3)*55)+'ms';
+    observer.observe(el);
+  });
+})();
+</script>
+
 </body></html>
