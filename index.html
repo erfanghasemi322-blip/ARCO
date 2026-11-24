@@ -449,7 +449,7 @@ function render(){
    $("resourceList").append(intro);
    const grid=document.createElement("div");grid.className="edu-grid";
    sections.forEach((item,index)=>{
-    const count=resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===item.id).length;
+    const count=resources.filter(x=>x.grade===grade&&x.kind===kind&&(x.section||"study")===item.id).length;
     const card=document.createElement("button");card.type="button";card.className="edu-card "+item.tone;card.dataset.eduSection=item.id;
     card.innerHTML='<span class="edu-card-top"><span class="edu-icon">'+item.icon+'</span><span class="edu-index">0'+(index+1)+' / ARCO</span></span><span class="edu-en">'+item.en+'</span><strong>'+item.title+'</strong><span class="edu-desc">'+item.desc+'</span><span class="edu-card-bottom"><span>'+count+' منبع</span><span class="edu-enter">ورود به فضا ↗</span></span>';
     grid.append(card);
@@ -459,7 +459,7 @@ function render(){
   }
   const chosen=sections.find(x=>x.id===eduSection);
   if(!chosen){eduSection=null;render();return}
-  const arr=resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===eduSection);
+  const arr=resources.filter(x=>x.grade===grade&&x.kind===kind&&(x.section||"study")===eduSection);
   $("countLabel").textContent=arr.length+" منبع";
   const head=document.createElement("div");head.className="edu-detail-head";
   head.innerHTML='<button type="button" class="edu-back" data-edu-back>← بازگشت به سه بخش</button><div><span class="edu-kicker">'+chosen.en+'</span><h3>'+chosen.icon+' '+chosen.title+'</h3><p>قفسه اختصاصی زیست '+grade+'</p></div>';
