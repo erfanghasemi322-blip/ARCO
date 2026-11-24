@@ -463,7 +463,7 @@ body.arco-light .ghost{background:#fff!important;color:#25334b!important;border-
 body.arco-light .top{border-color:#cbd7e8!important}
 body.arco-light .arco-settings-trigger{background:linear-gradient(120deg,#e5ddff,#d8f4f4)!important;color:#29324d!important}
 body.arco-reduce-motion *,body.arco-reduce-motion *:before,body.arco-reduce-motion *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-body.arco-compact .grade,body.arco-compact .bio-card,body.arco-compact .resource{padding:11px!important}body.arco-compact .section-title{margin-top:22px!important}body.arco-compact .resource-list{gap:7px!important}
+body,body *{font-family:var(--arco-font-family,"Vazirmatn",Tahoma,sans-serif)!important}body.arco-compact .grade,body.arco-compact .bio-card,body.arco-compact .resource{padding:11px!important}body.arco-compact .section-title{margin-top:22px!important}body.arco-compact .resource-list{gap:7px!important}
 @media(max-width:600px){.arco-hub-card{padding:17px;border-radius:20px}.arco-hub-grid,.arco-auth-fields{grid-template-columns:1fr}.arco-avatar-grid{grid-template-columns:repeat(4,1fr)}.arco-hub-head h2{font-size:19px}.arco-settings-trigger span,.arco-profile-trigger span{display:none}}
 </style>
 </head>
@@ -958,7 +958,7 @@ let prefs={...defaults},selectedAvatar='🧬';
 function read(key,fallback){try{const v=JSON.parse(localStorage.getItem(key));return v??fallback}catch{return fallback}}
 function savePrefs(){try{localStorage.setItem(settingsKey,JSON.stringify(prefs))}catch{}}
 function applyPrefs(){
- document.body.style.fontFamily='"'+prefs.font+'",Tahoma,sans-serif';
+ document.documentElement.style.setProperty("--arco-font-family",prefs.font==="Estedad"?'"Estedad",Tahoma,sans-serif':prefs.font==="Tahoma"?'Tahoma,Arial,sans-serif':'"Vazirmatn",Tahoma,sans-serif');
  document.body.classList.toggle('arco-light',prefs.theme==='light'||(prefs.theme==='system'&&matchMedia('(prefers-color-scheme: light)').matches));
  document.body.classList.toggle('arco-reduce-motion',!!prefs.reduceMotion);
  document.body.classList.toggle('arco-compact',!!prefs.compact);
