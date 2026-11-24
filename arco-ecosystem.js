@@ -104,5 +104,17 @@ if(a==='exam'){const c=Number($('ecoC').value),w=Number($('ecoW').value),z=Numbe
 if(a==='post'){const v=$('ecoPost').value.trim();if(!v)return toast('متن خالی است.');d.posts.push({text:v,date:today()});save();$('ecoPosts').innerHTML=postsHtml();stats()}
 });
 document.addEventListener('change',e=>{if(e.target.id==='ecoBioModel'){const m=BIO_MODELS[Number(e.target.value)];const info=$('ecoBioInfo');if(info)info.textContent=m.name+'：'+m.desc;const c=$('eco3d');if(c&&c._ecoRebuild)c._ecoRebuild();return}const b=e.target.closest('[data-act="taskdone"]');if(!b)return;const i=Number(b.dataset.i);if(d.tasks[i]){d.tasks[i].done=b.checked;if(b.checked&&!d.tasks[i].rewarded){d.tasks[i].rewarded=true;award(5)}save();stats()}});
+
+// Mobile-first quick navigation
+function mountMobileDock(){
+ if(document.getElementById('arcoMobileDock'))return;
+ const dock=document.createElement('nav');dock.id='arcoMobileDock';dock.className='arco-mobile-dock';dock.setAttribute('aria-label','میانبرهای اصلی سایت');
+ dock.innerHTML='<a class="dock-link active" href="#arcoTop" aria-label="خانه"><span aria-hidden="true">⌂</span><small>خانه</small></a><a class="dock-link" href="#learning" aria-label="درس‌ها"><span aria-hidden="true">▤</span><small>درس‌ها</small></a><a class="dock-link" href="#studyTools" aria-label="ابزارها"><span aria-hidden="true">⌘</span><small>ابزارها</small></a><button class="dock-link" type="button" data-dock-profile aria-label="حساب کاربری"><span aria-hidden="true">◉</span><small>حساب من</small></button>';
+ document.body.appendChild(dock);
+ dock.addEventListener('click',e=>{const profile=e.target.closest('[data-dock-profile]');if(profile){const trigger=document.getElementById('arcoProfileBtn');if(trigger)trigger.click();return}const link=e.target.closest('a[href^="#"]');if(link){const target=document.querySelector(link.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});dock.querySelectorAll('.dock-link').forEach(x=>x.classList.toggle('active',x===link))}}});
+ const sections=[['arcoTop',0],['learning',1],['studyTools',2]];if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>{const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!visible)return;const item=sections.find(x=>x[0]===visible.target.id);if(item)dock.querySelectorAll('.dock-link').forEach((x,i)=>x.classList.toggle('active',i===item[1]))},{rootMargin:'-20% 0px -65% 0px',threshold:[0,.15,.4]});sections.forEach(x=>{const el=document.getElementById(x[0]);if(el)io.observe(el)})}
+}
+mountMobileDock();
+
 stats();
 })();
