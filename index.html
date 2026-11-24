@@ -391,6 +391,29 @@ body:after{
 .summary-talk[hidden],.summary-chapter[hidden]{display:none!important}
 @media(max-width:700px){.summary-hero{min-height:0;padding:21px}.summary-hero-art{width:90px;height:90px;transform:scale(.82)}.summary-hero-art:before,.summary-hero-art:after{width:110px;height:45px}.summary-hero-art span{font-size:15px}.summary-toolbar{grid-template-columns:1fr}.summary-tools{display:grid;grid-template-columns:1fr 1fr}.summary-result-count{padding:2px 4px}.summary-talk h4{align-items:flex-start;flex-direction:column;gap:6px}}
 @media(max-width:460px){.summary-hero-art{display:none}.summary-hero{padding:19px}.summary-hero h3{font-size:20px}.summary-chapter>summary{padding:13px}.summary-talks{padding:2px 9px 11px}.summary-talk{padding:14px}}
+
+/* ARCO Persian typography refresh: typography only, existing palette preserved */
+html,body,button,input,select,textarea{
+  font-family:"Vazirmatn",Tahoma,sans-serif;
+  font-optical-sizing:auto;
+}
+body{font-weight:400;line-height:1.9}
+h1,h2,h3,h4,h5,h6,.brand h1,.section-title h2,.resource-head h3{
+  font-family:"Vazirmatn",Tahoma,sans-serif;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+p,.hero p,.grade p,.tool p,.footer,.field span{
+  font-weight:400;
+  letter-spacing:-.015em;
+}
+button,.btn,.tab,.ghost,.tool button{
+  font-weight:600;
+  letter-spacing:-.02em;
+}
+input,select,textarea{font-weight:400}
+.resource strong,.bio-card strong,.tool strong{font-weight:700}
+.brand h1{letter-spacing:.015em}
 </style>
 </head>
 <body><div id="arcoGate" dir="rtl"><div class="gate-card"><div class="gate-logo">A</div><h1>ARCO</h1><p class="gate-sub">به جهان علمی آرکو خوش آمدی.<br>برای ورود، کد دسترسی را وارد کن.</p><form id="arcoGateForm"><label for="arcoGateCode">کد دسترسی</label><input id="arcoGateCode" type="password" placeholder="کد ورود را وارد کن" autocomplete="off"><button type="submit">ورود به آرکو ←</button><p class="gate-error" id="arcoGateError" aria-live="polite"></p></form><div class="gate-foot">ARCO · PRIVATE ACCESS</div></div></div><script>(function(){const gate=document.getElementById("arcoGate"),style=document.getElementById("arcoLockStyle"),form=document.getElementById("arcoGateForm"),input=document.getElementById("arcoGateCode"),error=document.getElementById("arcoGateError");function unlock(){try{localStorage.setItem("arco-access-granted","yes")}catch(e){}if(style)style.remove();if(gate)gate.remove()}try{if(localStorage.getItem("arco-access-granted")==="yes"){unlock();return}}catch(e){}form.addEventListener("submit",function(e){e.preventDefault();if(input.value.trim()==="ARCO-1405"){unlock()}else{error.textContent="کد واردشده درست نیست. دوباره تلاش کن.";input.value="";input.focus()}})})();</script>
