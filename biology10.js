@@ -206,7 +206,7 @@ let state={unit:null,index:0,answers:[],locked:false};
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function shelf(){
  $('gradeTitle').textContent='زیست دهم';
- $('countLabel').textContent=bank10.length+' آزمون گفتار · ۳۰ سؤال';
+ $('countLabel').textContent=bank10.length+' آزمون گفتار · '+(bank10.length*10)+' سؤال';
  root.innerHTML='<div class="quiz-shell"><div class="quiz-hero"><h3>🧬 بانک آزمون تستی زیست دهم</h3><p>آزمون‌های مستقل و کتاب‌محور، ۱۰ سؤال چهارگزینه‌ای برای هر گفتار. پس از انتخاب هر پاسخ، پاسخ صحیح و توضیح آموزشی نمایش داده می‌شود.</p></div><div class="quiz-groups">'+bank10.map((u,i)=>'<article class="quiz-unit"><h4>'+esc(u.chapter)+'</h4><p>'+esc(u.unit)+' · ۱۰ سؤال</p><button type="button" data-bio10-start="'+i+'">شروع آزمون ←</button><small>پاسخ‌گویی مرحله‌ای · بررسی فوری پاسخ</small></article>').join('')+'</div></div>';
  root.querySelectorAll('[data-bio10-start]').forEach(b=>b.addEventListener('click',()=>start(+b.dataset.bio10Start)));
 }
