@@ -273,6 +273,39 @@ body:after{
   .arco-reveal{opacity:1;transform:none}
 }
 
+
+/* Dedicated visual system for the three written-exam shelves only */
+.written-intro{position:relative;overflow:hidden;padding:22px 22px 18px;border:1px solid #344264;border-radius:19px;background:radial-gradient(ellipse at 95% 0%,rgba(126,91,255,.2),transparent 48%),linear-gradient(135deg,#151e35,#101827);margin:2px 0 14px}
+.written-intro:after{content:"✦";position:absolute;right:22px;top:12px;font-size:76px;color:rgba(157,139,255,.12);pointer-events:none}
+.written-kicker{display:block;color:#a99cff;font-size:10px;font-weight:800;letter-spacing:2px}
+.written-intro h3{font-size:20px;margin:9px 0 5px;color:#f4f2ff}
+.written-intro p{font-size:12px;line-height:1.9;color:#aebbd1;margin:0;max-width:560px}
+.written-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.written-card{appearance:none;text-align:right;display:flex;flex-direction:column;gap:9px;min-height:220px;padding:17px 15px 14px;border:1px solid #34445f;border-radius:18px;color:#f7f8ff;background:linear-gradient(155deg,#1b2941,#101827 75%);cursor:pointer;transition:transform .22s,border-color .22s,box-shadow .22s;position:relative;overflow:hidden}
+.written-card:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;left:-55px;top:50px;background:var(--glow);filter:blur(35px);opacity:.28;pointer-events:none}
+.written-card:hover,.written-card:focus-visible{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 35px #05091280;outline:none}
+.written-card.final{--accent:#e6b96e;--glow:#b47b35}
+.written-card.mock{--accent:#62c8e8;--glow:#287fa7}
+.written-card.authored{--accent:#a995ff;--glow:#7154ce}
+.written-card-top,.written-card-bottom{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.written-icon{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:#ffffff0c;border:1px solid #ffffff19}
+.written-index{font-size:11px;color:#8393ad;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.written-en{font-size:9px;letter-spacing:1.8px;color:var(--accent);font-weight:800;position:relative;z-index:1}
+.written-card strong{font-size:16px;line-height:1.5;position:relative;z-index:1}
+.written-desc{font-size:11px;color:#a8b6cc;line-height:1.8;min-height:40px;position:relative;z-index:1}
+.written-card-bottom{margin-top:auto;padding-top:11px;border-top:1px solid #ffffff16;font-size:10px;color:#aab8ce}
+.written-enter{color:var(--accent);font-weight:700}
+.written-detail-head{display:flex;align-items:center;gap:17px;padding:16px 18px;margin:2px 0 14px;border:1px solid #34445f;border-radius:17px;background:linear-gradient(120deg,#18253b,#101827)}
+.written-detail-head h3{margin:5px 0;font-size:18px;color:#f3f5ff}
+.written-detail-head p{margin:0;color:#9eacc2;font-size:11px}
+.written-back{flex:none;border:1px solid #53627e;border-radius:11px;background:#202d45;color:#e6eaff;padding:10px 12px;font-size:11px;cursor:pointer}
+.written-back:hover{border-color:#a995ff;background:#293858}
+.written-empty{min-height:210px;border:1px dashed #475875;border-radius:17px;background:radial-gradient(ellipse at 50% 0%,#28345280,transparent 70%),#101a2a;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:9px}
+.written-empty-icon{font-size:30px}
+.written-empty strong{font-size:14px;color:#e8edff}
+.written-empty p{max-width:440px;margin:0;color:#a7b5cb;font-size:11px;line-height:1.9}
+.written-empty-note{font-size:10px;color:#a99cff;background:#a995ff14;border:1px solid #a995ff35;padding:6px 11px;border-radius:20px}
+@media(max-width:720px){.written-grid{grid-template-columns:1fr}.written-card{min-height:180px}.written-intro{padding:18px}.written-detail-head{align-items:flex-start;flex-direction:column;gap:12px}.written-back{order:2}.written-card strong{font-size:17px}}
 </style>
 <style id="arcoLockStyle">body> :not(#arcoGate){display:none!important}#arcoGate{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 18% 12%,#50328a66,transparent 42%),radial-gradient(ellipse at 90% 85%,#075c7866,transparent 40%),#050611;color:#f5f2ff;font-family:Vazirmatn,Tahoma,sans-serif}#arcoGate .gate-card{width:min(100%,430px);padding:34px 28px;border:1px solid #a879ff66;border-radius:26px;background:linear-gradient(145deg,#12132af2,#09182af5);box-shadow:0 25px 90px #000b,0 0 45px #815bff22;text-align:center}#arcoGate .gate-logo{width:66px;height:66px;margin:0 auto 17px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#b28aff,#5a38d8 48%,#16bce8);box-shadow:0 0 30px #8e61ff88;font-size:27px;font-weight:900;letter-spacing:2px}#arcoGate h1{margin:0;font-size:27px;letter-spacing:5px}#arcoGate .gate-sub{margin:8px 0 25px;color:#aeb8d4;font-size:13px;line-height:2}#arcoGate label{display:block;text-align:right;margin:0 2px 8px;color:#d9d7f0;font-size:12px}#arcoGate input{width:100%;padding:14px 15px;border:1px solid #55477d;border-radius:13px;background:#080d1c;color:#fff;outline:none;text-align:center;letter-spacing:2px;font-size:17px}#arcoGate input:focus{border-color:#a879ff;box-shadow:0 0 0 3px #a879ff22}#arcoGate button{width:100%;margin-top:13px;padding:13px;border:0;border-radius:13px;background:linear-gradient(100deg,#9875ff,#28bfd7);color:#fff;font-weight:800;font-size:14px;cursor:pointer}#arcoGate .gate-error{min-height:23px;margin:12px 0 0;color:#ff9aaf;font-size:12px}#arcoGate .gate-foot{margin-top:18px;color:#737e9d;font-size:10px;letter-spacing:1px}</style><style>
 /* ARCO interactive textbook quizzes */
@@ -364,19 +397,62 @@ body:after{
 <script>
 const $=id=>document.getElementById(id);
 const kinds=["کتاب","آموزشی","تستی","تشریحی"], grades=["دهم","یازدهم","دوازدهم"];
-let grade="دهم",kind="کتاب",resources=[];
+let grade="دهم",kind="کتاب",resources=[],examSection=null;
 const key="arko-biology-resources-v1";
 function validUrl(s){try{let u=new URL(s);return ["http:","https:"].includes(u.protocol)?u.href:null}catch{return null}}
 function load(){try{resources=JSON.parse(localStorage.getItem(key)||"[]");if(!Array.isArray(resources))resources=[]}catch{resources=[]}
 const h=location.hash.match(/#data=([^&]+)/);if(h){try{let shared=JSON.parse(decodeURIComponent(escape(atob(h[1]))));if(Array.isArray(shared))resources=shared.filter(x=>x&&grades.includes(x.grade)&&kinds.includes(x.kind)&&typeof x.title==="string"&&validUrl(x.url));}catch{}}}
 function persist(){try{localStorage.setItem(key,JSON.stringify(resources))}catch{}}
-function render(){ $("gradeTitle").textContent="زیست "+grade;$("countLabel").textContent=resources.filter(x=>x.grade===grade&&x.kind===kind).length+" منبع";
-$("resourceList").innerHTML="";let arr=resources.filter(x=>x.grade===grade&&x.kind===kind);
-if(!arr.length){$("resourceList").innerHTML='<div class="empty">این قفسه فعلاً خالی است 🌱<br>به‌زودی منابع این بخش اینجا قرار می‌گیرند.</div>';return}
-arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),s=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;s.textContent="زیست "+x.grade+" · "+x.kind;info.append(b,s);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)})}
+function render(){
+ $("gradeTitle").textContent="زیست "+grade;
+ $("resourceList").innerHTML="";
+ if(kind==="تشریحی"){
+  const sections=[
+   {id:"final",title:"امتحان‌های نهایی",en:"FINAL EXAMS",icon:"🏛️",desc:"سوالات و PDF امتحان‌های نهایی سال‌های گذشته",tone:"final"},
+   {id:"mock",title:"امتحان‌های شبه‌نهایی",en:"MOCK FINALS",icon:"🎯",desc:"آزمون‌های شبیه‌ساز با حال‌وهوای امتحان نهایی",tone:"mock"},
+   {id:"authored",title:"امتحان‌های تألیفی",en:"ORIGINAL EXAMS",icon:"✍️",desc:"آزمون‌های طراحی‌شده برای تمرین تشریحی",tone:"authored"}
+  ];
+  if(!examSection){
+   const total=resources.filter(x=>x.grade===grade&&x.kind===kind).length;
+   $("countLabel").textContent="۳ بخش مستقل";
+   const intro=document.createElement("div");intro.className="written-intro";
+   intro.innerHTML='<span class="written-kicker">ARCO · WRITTEN EXAMS</span><h3>مسیر تمرین تشریحی</h3><p>منبع موردنظرت را از قفسه‌های زیر انتخاب کن. هر پایه آرشیو جداگانه خودش را دارد.</p>';
+   $("resourceList").append(intro);
+   const grid=document.createElement("div");grid.className="written-grid";
+   sections.forEach((item,index)=>{
+    const count=resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===item.id).length;
+    const card=document.createElement("button");card.type="button";card.className="written-card "+item.tone;card.dataset.examSection=item.id;
+    card.innerHTML='<span class="written-card-top"><span class="written-icon">'+item.icon+'</span><span class="written-index">0'+(index+1)+'</span></span><span class="written-en">'+item.en+'</span><strong>'+item.title+'</strong><span class="written-desc">'+item.desc+'</span><span class="written-card-bottom"><span>'+count+' منبع</span><span class="written-enter">ورود به بخش ↗</span></span>';
+    grid.append(card);
+   });
+   $("resourceList").append(grid);
+   return;
+  }
+  const chosen=sections.find(x=>x.id===examSection);
+  if(!chosen){examSection=null;render();return}
+  const arr=resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===examSection);
+  $("countLabel").textContent=arr.length+" منبع";
+  const head=document.createElement("div");head.className="written-detail-head";
+  head.innerHTML='<button type="button" class="written-back" data-exam-back>← بازگشت به سه بخش</button><div><span class="written-kicker">'+chosen.en+'</span><h3>'+chosen.icon+' '+chosen.title+'</h3><p>آرشیو اختصاصی زیست '+grade+'</p></div>';
+  $("resourceList").append(head);
+  if(!arr.length){
+   const empty=document.createElement("div");empty.className="written-empty";
+   empty.innerHTML='<span class="written-empty-icon">📂</span><strong>این آرشیو آماده دریافت فایل است</strong><p>PDF سؤال‌ها و پاسخ‌نامه‌های مربوط به این بخش، پس از افزودن منابع در همین‌جا نمایش داده می‌شوند.</p><span class="written-empty-note">هنوز فایلی در این بخش ثبت نشده است</span>';
+   $("resourceList").append(empty);return;
+  }
+  arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent="زیست "+x.grade+" · "+chosen.title;info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)});
+  return;
+ }
+ examSection=null;
+ const arr=resources.filter(x=>x.grade===grade&&x.kind===kind);
+ $("countLabel").textContent=arr.length+" منبع";
+ if(!arr.length){$("resourceList").innerHTML='<div class="empty">این قفسه فعلاً خالی است 🌱<br>به‌زودی منابع این بخش اینجا قرار می‌گیرند.</div>';return}
+ arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent="زیست "+x.grade+" · "+x.kind;info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)})
+}
+$("resourceList").addEventListener("click",e=>{const card=e.target.closest("[data-exam-section]");if(card){examSection=card.dataset.examSection;render();return}if(e.target.closest("[data-exam-back]")){examSection=null;render()}});
 function toast(t){$("toast").textContent=t;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2400)}
-document.querySelectorAll(".grade").forEach(b=>b.addEventListener("click",()=>{grade=b.dataset.grade;document.querySelectorAll(".grade").forEach(x=>x.classList.toggle("active",x===b));render();$("learning").scrollIntoView({behavior:"smooth",block:"start"})}));
-document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{kind=b.dataset.kind;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));render()}));
+document.querySelectorAll(".grade").forEach(b=>b.addEventListener("click",()=>{grade=b.dataset.grade;examSection=null;document.querySelectorAll(".grade").forEach(x=>x.classList.toggle("active",x===b));render();$("learning").scrollIntoView({behavior:"smooth",block:"start"})}));
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{kind=b.dataset.kind;examSection=null;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));render()}));
 $("shareBtn").addEventListener("click",async()=>{if(!resources.length){toast("اول چند منبع به مجموعه اضافه کن.");return}let data=btoa(unescape(encodeURIComponent(JSON.stringify(resources))));let link=location.href.split("#")[0]+"#data="+data;try{await navigator.clipboard.writeText(link);toast("لینک اشتراک مجموعه کپی شد.")}catch{prompt("این لینک را کپی کن:",link)}});
 $("homeBtn").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 $("calcBtn").addEventListener("click",()=>{let s=$("calcInput").value.trim();if(!/^[0-9+\-*\/().%\s]+$/.test(s)||!s){$("calcResult").textContent="عبارت ریاضی معتبر وارد کن.";return}try{let n=Function('"use strict";return ('+s+')')();$("calcResult").textContent=Number.isFinite(n)?"نتیجه: "+n:"عبارت قابل محاسبه نیست."}catch{$("calcResult").textContent="عبارت را بررسی کن."}});
