@@ -414,11 +414,60 @@ button,.btn,.tab,.ghost,.tool button{
 input,select,textarea{font-weight:400}
 .resource strong,.bio-card strong,.tool strong{font-weight:700}
 .brand h1{letter-spacing:.015em}
+ 
+/* ARCO PERSONAL HUB · settings, appearance and local profile */
+@import url('https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800;900&display=swap');
+.arco-settings-trigger,.arco-profile-trigger{display:inline-flex;align-items:center;gap:7px;min-height:44px}
+.arco-settings-trigger{border-color:#7566c9;background:linear-gradient(120deg,#342c63,#123d50)}
+#arcoPersonalHub{position:fixed;inset:0;z-index:99990;display:none;align-items:center;justify-content:center;padding:16px;background:#030713c9;backdrop-filter:blur(14px)}
+#arcoPersonalHub.open{display:flex;animation:arcoHubFade .22s ease}
+@keyframes arcoHubFade{from{opacity:0}to{opacity:1}}
+.arco-hub-card{position:relative;width:min(100%,760px);max-height:min(90vh,850px);overflow:auto;border:1px solid #59648c;border-radius:26px;background:linear-gradient(145deg,#111d35f7,#10152bf7 65%,#102c38f7);color:#eff6ff;box-shadow:0 28px 100px #000b,0 0 50px #8170ff24;padding:24px}
+.arco-hub-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.arco-hub-head h2{margin:0;font-size:23px;font-weight:900}
+.arco-hub-head p{margin:4px 0 0;color:#aabbd3;font-size:12px}
+.arco-hub-close{width:44px;height:44px;border-radius:13px;border:1px solid #455778;background:#182640;color:#fff;font-size:22px}
+.arco-hub-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.arco-hub-tabs button,.arco-hub-btn{min-height:44px;border:1px solid #3a4d70;border-radius:12px;background:#182742;color:#edf4ff;padding:10px 15px;font:inherit;font-weight:700;cursor:pointer}
+.arco-hub-tabs button.active,.arco-hub-btn.primary{background:linear-gradient(110deg,#6654ad,#126273);border-color:#9d8aff}
+.arco-hub-section{display:none;animation:arcoHubFade .2s ease}.arco-hub-section.active{display:block}
+.arco-hub-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.arco-hub-setting{padding:15px;border:1px solid #354969;border-radius:16px;background:#ffffff08}
+.arco-hub-setting label,.arco-hub-setting .setting-label{display:block;color:#f1f5ff;font-size:13px;font-weight:700;margin-bottom:8px}
+.arco-hub-setting small{display:block;color:#a9bad1;font-size:11px;line-height:1.8;margin-top:6px}
+.arco-hub-setting select,.arco-hub-setting input{width:100%;min-height:44px;border:1px solid #455a7b;border-radius:11px;background:#0b1629;color:#fff;padding:10px;font:inherit}
+.arco-hub-check{display:flex!important;align-items:center;gap:10px;margin:0!important}
+.arco-hub-check input{width:19px!important;min-height:19px!important;accent-color:#8f7cff}
+.arco-avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:12px 0}
+.arco-avatar-choice{min-height:54px;border:1px solid #405577;border-radius:14px;background:#172742;font-size:25px;cursor:pointer}
+.arco-avatar-choice.selected{border-color:#a38cff;box-shadow:0 0 0 2px #9b85ff55;background:#322b5c}
+.arco-auth-box{padding:18px;border:1px solid #3b4d6d;border-radius:18px;background:linear-gradient(140deg,#172642,#111a2e)}
+.arco-auth-box h3{margin:0 0 6px;font-size:18px}
+.arco-auth-box p{margin:0 0 14px;color:#aebed4;font-size:12px;line-height:1.9}
+.arco-auth-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.arco-auth-fields label{display:block;color:#d9e5f5;font-size:12px;margin-bottom:6px}
+.arco-auth-fields input{width:100%;min-height:45px;border:1px solid #435675;border-radius:11px;background:#0a1425;color:#fff;padding:10px;font:inherit}
+.arco-auth-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.arco-auth-message{min-height:22px;color:#72e4c2;font-size:12px;margin-top:10px}
+.arco-profile-card{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid #425477;border-radius:18px;background:#ffffff09;margin-bottom:14px}
+.arco-profile-avatar{width:64px;height:64px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(135deg,#5e4d9e,#126477);font-size:34px;flex:none}
+.arco-profile-card strong{font-size:16px}.arco-profile-card small{display:block;color:#adbed4;font-size:11px;margin-top:4px}
+.arco-hub-note{padding:12px 14px;border:1px solid #786caa66;border-radius:13px;background:#7865bd16;color:#c9c5e8;font-size:11px;line-height:1.9;margin-top:14px}
+body.arco-light{--bg:#edf3fa;--panel:#fff;--panel2:#e6edf7;--line:#cbd7e8;--text:#18243a;--muted:#53647d;background:#edf3fa!important;color:#18243a!important}
+body.arco-light{background:radial-gradient(ellipse at 85% 0%,#d8d0ff99,transparent 34%),radial-gradient(ellipse at 0% 48%,#c8f0ef,transparent 36%),#edf3fa!important}
+body.arco-light .hero,body.arco-light .main-panel,body.arco-light .side-panel,body.arco-light .tool-card,body.arco-light .grade,body.arco-light .bio-card{background:linear-gradient(145deg,#fff,#eaf0fa)!important;color:#1b2940!important;border-color:#c8d5e8!important}
+body.arco-light .hero p,body.arco-light .grade p,body.arco-light .tool p,body.arco-light .footer,body.arco-light .section-title p{color:#52647d!important}
+body.arco-light .resource,body.arco-light .tab,body.arco-light .field input,body.arco-light .field select,body.arco-light .field textarea,body.arco-light .tool input,body.arco-light .note-area{background:#f3f6fb!important;color:#18243a!important;border-color:#c7d4e5!important}
+body.arco-light .ghost{background:#fff!important;color:#25334b!important;border-color:#c8d5e8!important}
+body.arco-light .top{border-color:#cbd7e8!important}
+body.arco-light .arco-settings-trigger{background:linear-gradient(120deg,#e5ddff,#d8f4f4)!important;color:#29324d!important}
+body.arco-reduce-motion *,body.arco-reduce-motion *:before,body.arco-reduce-motion *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+@media(max-width:600px){.arco-hub-card{padding:17px;border-radius:20px}.arco-hub-grid,.arco-auth-fields{grid-template-columns:1fr}.arco-avatar-grid{grid-template-columns:repeat(4,1fr)}.arco-hub-head h2{font-size:19px}.arco-settings-trigger span,.arco-profile-trigger span{display:none}}
 </style>
 </head>
 <body><div id="arcoGate" dir="rtl"><div class="gate-card"><div class="gate-logo">A</div><h1>ARCO</h1><p class="gate-sub">به جهان علمی آرکو خوش آمدی.<br>برای ورود، کد دسترسی را وارد کن.</p><form id="arcoGateForm"><label for="arcoGateCode">کد دسترسی</label><input id="arcoGateCode" type="password" placeholder="کد ورود را وارد کن" autocomplete="off"><button type="submit">ورود به آرکو ←</button><p class="gate-error" id="arcoGateError" aria-live="polite"></p></form><div class="gate-foot">ARCO · PRIVATE ACCESS</div></div></div><script>(function(){const gate=document.getElementById("arcoGate"),style=document.getElementById("arcoLockStyle"),form=document.getElementById("arcoGateForm"),input=document.getElementById("arcoGateCode"),error=document.getElementById("arcoGateError");function unlock(){try{localStorage.setItem("arco-access-granted","yes")}catch(e){}if(style)style.remove();if(gate)gate.remove()}try{if(localStorage.getItem("arco-access-granted")==="yes"){unlock();return}}catch(e){}form.addEventListener("submit",function(e){e.preventDefault();if(input.value.trim()==="ARCO-1405"){unlock()}else{error.textContent="کد واردشده درست نیست. دوباره تلاش کن.";input.value="";input.focus()}})})();</script>
 <main class="shell">
-<header class="top"><div class="brand"><div class="logo"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 5c22 7 22 23 0 30M31 5C9 12 9 28 31 35M12 10h16M9 20h22M12 30h16" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M14 14h12M14 26h12" stroke="#fff" stroke-width="1.5"/></svg></div><div><h1>ARCO</h1><small>Future Science Universe</small></div></div><div class="top-actions"><button class="ghost" id="homeBtn">صفحه اصلی</button><button class="ghost" id="shareBtn">اشتراک‌گذاری ↗</button></div></header>
+<header class="top"><div class="brand"><div class="logo"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 5c22 7 22 23 0 30M31 5C9 12 9 28 31 35M12 10h16M9 20h22M12 30h16" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M14 14h12M14 26h12" stroke="#fff" stroke-width="1.5"/></svg></div><div><h1>ARCO</h1><small>Future Science Universe</small></div></div><div class="top-actions"><button class="ghost" id="homeBtn">صفحه اصلی</button><button class="ghost" id="shareBtn">اشتراک‌گذاری ↗</button><button class="ghost arco-profile-trigger" id="arcoProfileBtn" aria-label="حساب کاربری">👤 <span>ورود</span></button><button class="ghost arco-settings-trigger" id="arcoSettingsBtn" aria-label="تنظیمات سایت">⚙️ <span>تنظیمات</span></button></div></header>
 <section class="hero hero-next">
   <div class="hero-copy">
     <div class="eyebrow"><span class="live-dot"></span> جهان علمی آینده · تجربه اختصاصی ARCO</div>
@@ -869,4 +918,99 @@ document.querySelectorAll('.grade').forEach(b=>b.addEventListener('click',()=>{i
 
 <script src="./biology10.js"></script>
 <script src="./biology10-extra.js"></script>
+
+<div id="arcoPersonalHub" dir="rtl" aria-hidden="true">
+ <div class="arco-hub-card" role="dialog" aria-modal="true" aria-labelledby="arcoHubTitle">
+  <div class="arco-hub-head"><div><h2 id="arcoHubTitle">🧬 مرکز شخصی‌سازی ARCO</h2><p>فضای یادگیری‌ات را مطابق سلیقه خودت تنظیم کن</p></div><button class="arco-hub-close" id="arcoHubClose" aria-label="بستن">×</button></div>
+  <div class="arco-hub-tabs"><button class="active" data-hub-tab="settings">⚙️ تنظیمات</button><button data-hub-tab="account">👤 حساب من</button></div>
+  <section class="arco-hub-section active" id="arcoHubSettings">
+   <div class="arco-hub-grid">
+    <div class="arco-hub-setting"><label for="arcoFontSelect">فونت فارسی سایت</label><select id="arcoFontSelect"><option value="Vazirmatn">وزیرمتن، مدرن و خوانا</option><option value="Estedad">استعداد، هندسی و امروزی</option><option value="Tahoma">Tahoma، ساده و کلاسیک</option></select><small>فونت انتخابی در همین مرورگر ذخیره می‌شود.</small></div>
+    <div class="arco-hub-setting"><label for="arcoThemeSelect">حالت نمایش</label><select id="arcoThemeSelect"><option value="dark">🌙 شب</option><option value="light">☀️ روز</option><option value="system">🖥️ مطابق دستگاه</option></select><small>رنگ‌بندی اصلی ARCO حفظ شده و حالت روشن نسخه هماهنگ آن است.</small></div>
+    <div class="arco-hub-setting"><label class="arco-hub-check"><input type="checkbox" id="arcoMotionToggle"> کاهش انیمیشن‌ها</label><small>برای تجربه آرام‌تر و سبک‌تر.</small></div>
+    <div class="arco-hub-setting"><label class="arco-hub-check"><input type="checkbox" id="arcoCompactToggle"> فاصله‌گذاری فشرده‌تر</label><small>نمایش جمع‌وجورتر کارت‌ها و بخش‌ها.</small></div>
+   </div>
+   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:15px"><button class="arco-hub-btn" id="arcoResetSettings">بازگردانی تنظیمات پیش‌فرض</button></div>
+  </section>
+  <section class="arco-hub-section" id="arcoHubAccount">
+   <div id="arcoSignedProfile" hidden></div>
+   <div class="arco-auth-box" id="arcoAuthBox">
+    <h3>به جمع پژوهشگران ARCO بپیوند 🧫</h3><p>بدون ایمیل و شماره تلفن، یک پروفایل محلی برای این مرورگر بساز.</p>
+    <div class="arco-auth-fields"><div><label for="arcoUsername">نام کاربری اختصاصی</label><input id="arcoUsername" maxlength="20" autocomplete="username" placeholder="مثلاً BioExplorer"></div><div><label for="arcoPassword">رمز عبور</label><input id="arcoPassword" type="password" minlength="6" autocomplete="new-password" placeholder="حداقل ۶ نویسه"></div></div>
+    <div style="margin-top:13px;color:#dce8f8;font-size:12px;font-weight:700">آواتار پروفایل را انتخاب کن</div>
+    <div class="arco-avatar-grid" id="arcoAvatarGrid"><button class="arco-avatar-choice selected" type="button" data-avatar="🧬">🧬</button><button class="arco-avatar-choice" type="button" data-avatar="🔬">🔬</button><button class="arco-avatar-choice" type="button" data-avatar="🧫">🧫</button><button class="arco-avatar-choice" type="button" data-avatar="🦠">🦠</button><button class="arco-avatar-choice" type="button" data-avatar="🧪">🧪</button><button class="arco-avatar-choice" type="button" data-avatar="🧠">🧠</button><button class="arco-avatar-choice" type="button" data-avatar="🦋">🦋</button><button class="arco-avatar-choice" type="button" data-avatar="🌱">🌱</button><button class="arco-avatar-choice" type="button" data-avatar="🪸">🪸</button><button class="arco-avatar-choice" type="button" data-avatar="🐬">🐬</button><button class="arco-avatar-choice" type="button" data-avatar="🦉">🦉</button><button class="arco-avatar-choice" type="button" data-avatar="🌌">🌌</button></div>
+    <div class="arco-auth-actions"><button class="arco-hub-btn primary" id="arcoRegisterBtn">ساخت حساب محلی</button><button class="arco-hub-btn" id="arcoLoginBtn">ورود به حساب</button></div>
+    <div class="arco-auth-message" id="arcoAuthMessage" aria-live="polite"></div>
+   </div>
+   <div class="arco-hub-note">این حساب فقط برای زیبایی و شخصی‌سازی تجربه سایت است. اطلاعات روی همین مرورگر ذخیره می‌شود و به دستگاه دیگر منتقل نمی‌شود. این بخش حساب آنلاین یا سامانه امن احراز هویت نیست؛ رمز مهم یا تکراری استفاده نکن.</div>
+  </section>
+ </div>
+</div>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const hub=$('arcoPersonalHub'),settingsKey='arco-ui-preferences-v1',usersKey='arco-local-profiles-v1',sessionKey='arco-local-session-v1';
+const defaults={font:'Vazirmatn',theme:'dark',reduceMotion:false,compact:false};
+let prefs={...defaults},selectedAvatar='🧬';
+function read(key,fallback){try{const v=JSON.parse(localStorage.getItem(key));return v??fallback}catch{return fallback}}
+function savePrefs(){try{localStorage.setItem(settingsKey,JSON.stringify(prefs))}catch{}}
+function applyPrefs(){
+ document.body.style.fontFamily='"'+prefs.font+'",Tahoma,sans-serif';
+ document.body.classList.toggle('arco-light',prefs.theme==='light'||(prefs.theme==='system'&&matchMedia('(prefers-color-scheme: light)').matches));
+ document.body.classList.toggle('arco-reduce-motion',!!prefs.reduceMotion);
+ document.body.classList.toggle('arco-compact',!!prefs.compact);
+ $('arcoFontSelect').value=prefs.font;$('arcoThemeSelect').value=prefs.theme;
+ $('arcoMotionToggle').checked=!!prefs.reduceMotion;$('arcoCompactToggle').checked=!!prefs.compact;
+}
+function loadPrefs(){prefs={...defaults,...read(settingsKey,{})};applyPrefs()}
+function openHub(tab){hub.classList.add('open');hub.setAttribute('aria-hidden','false');switchTab(tab||'settings');renderProfile();$('arcoHubClose').focus()}
+function closeHub(){hub.classList.remove('open');hub.setAttribute('aria-hidden','true')}
+function switchTab(tab){document.querySelectorAll('[data-hub-tab]').forEach(b=>b.classList.toggle('active',b.dataset.hubTab===tab));$('arcoHubSettings').classList.toggle('active',tab==='settings');$('arcoHubAccount').classList.toggle('active',tab==='account')}
+$('arcoSettingsBtn').addEventListener('click',()=>openHub('settings'));
+$('arcoProfileBtn').addEventListener('click',()=>openHub('account'));
+$('arcoHubClose').addEventListener('click',closeHub);
+hub.addEventListener('click',e=>{if(e.target===hub)closeHub()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&hub.classList.contains('open'))closeHub()});
+document.querySelectorAll('[data-hub-tab]').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.hubTab)));
+$('arcoFontSelect').addEventListener('change',e=>{prefs.font=e.target.value;applyPrefs();savePrefs()});
+$('arcoThemeSelect').addEventListener('change',e=>{prefs.theme=e.target.value;applyPrefs();savePrefs()});
+$('arcoMotionToggle').addEventListener('change',e=>{prefs.reduceMotion=e.target.checked;applyPrefs();savePrefs()});
+$('arcoCompactToggle').addEventListener('change',e=>{prefs.compact=e.target.checked;applyPrefs();savePrefs()});
+$('arcoResetSettings').addEventListener('click',()=>{prefs={...defaults};applyPrefs();savePrefs()});
+$('arcoAvatarGrid').addEventListener('click',e=>{const b=e.target.closest('[data-avatar]');if(!b)return;selectedAvatar=b.dataset.avatar;document.querySelectorAll('.arco-avatar-choice').forEach(x=>x.classList.toggle('selected',x===b))});
+async function digest(pass,salt){const data=new TextEncoder().encode(salt+':'+pass);const hash=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(hash)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+function users(){return read(usersKey,[]).filter(x=>x&&typeof x.username==='string'&&typeof x.hash==='string')}
+function setMessage(t,bad=false){$('arcoAuthMessage').textContent=t;$('arcoAuthMessage').style.color=bad?'#ff9baf':'#72e4c2'}
+function current(){const name=localStorage.getItem(sessionKey);return users().find(u=>u.username===name)||null}
+function renderProfile(){
+ const u=current(),box=$('arcoSignedProfile'),auth=$('arcoAuthBox');
+ if(!u){box.hidden=true;box.innerHTML='';auth.hidden=false;$('arcoProfileBtn').innerHTML='👤 <span>ورود</span>';return}
+ box.hidden=false;auth.hidden=true;
+ box.innerHTML='<div class="arco-profile-card"><div class="arco-profile-avatar">'+u.avatar+'</div><div><strong>'+u.username.replace(/[&<>"']/g,'')+'</strong><small>پژوهشگر ARCO · پروفایل این دستگاه</small></div></div><button class="arco-hub-btn" id="arcoLogoutBtn">خروج از حساب</button>';
+ $('arcoProfileBtn').innerHTML=u.avatar+' <span>'+u.username.replace(/[&<>"']/g,'')+'</span>';
+ $('arcoLogoutBtn').addEventListener('click',()=>{localStorage.removeItem(sessionKey);renderProfile();setMessage('از حساب محلی خارج شدی.')});
+}
+function credentials(){return {username:$('arcoUsername').value.trim(),password:$('arcoPassword').value}}
+$('arcoRegisterBtn').addEventListener('click',async()=>{
+ const {username,password}=credentials();
+ if(!/^[\p{L}\p{N}_-]{3,20}$/u.test(username)){setMessage('نام کاربری باید ۳ تا ۲۰ نویسه و بدون فاصله باشد.',true);return}
+ if(password.length<6){setMessage('رمز عبور باید دست‌کم ۶ نویسه داشته باشد.',true);return}
+ if(!crypto?.subtle){setMessage('مرورگر فعلی امکان ساخت امن اثرانگشت رمز را ندارد.',true);return}
+ const list=users();if(list.some(u=>u.username.toLowerCase()===username.toLowerCase())){setMessage('این نام کاربری قبلاً در همین مرورگر ثبت شده است.',true);return}
+ const salt=Array.from(crypto.getRandomValues(new Uint8Array(16))).map(x=>x.toString(16).padStart(2,'0')).join('');
+ const hash=await digest(password,salt);list.push({username,avatar:selectedAvatar,salt,hash,createdAt:Date.now()});
+ try{localStorage.setItem(usersKey,JSON.stringify(list));localStorage.setItem(sessionKey,username);setMessage('حساب محلی ساخته شد. خوش آمدی!');renderProfile()}catch{setMessage('فضای ذخیره‌سازی مرورگر در دسترس نیست.',true)}
+});
+$('arcoLoginBtn').addEventListener('click',async()=>{
+ const {username,password}=credentials(),u=users().find(x=>x.username.toLowerCase()===username.toLowerCase());
+ if(!u){setMessage('این نام کاربری در این مرورگر پیدا نشد.',true);return}
+ const hash=await digest(password,u.salt);if(hash!==u.hash){setMessage('رمز عبور درست نیست.',true);return}
+ localStorage.setItem(sessionKey,u.username);setMessage('با موفقیت وارد شدی.');renderProfile();
+});
+try{loadPrefs()}catch{}
+try{matchMedia('(prefers-color-scheme: light)').addEventListener('change',()=>{if(prefs.theme==='system')applyPrefs()})}catch{}
+renderProfile();
+})();
+</script>
 </body></html>
