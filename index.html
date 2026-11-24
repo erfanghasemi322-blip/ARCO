@@ -276,6 +276,34 @@ body:after{
 }
 
 
+/* Dedicated visual system for the three learning-resource shelves */
+.edu-intro{position:relative;overflow:hidden;padding:23px 22px 20px;border:1px solid #3b3d70;border-radius:20px;background:radial-gradient(ellipse at 8% 5%,#3c74a533,transparent 42%),radial-gradient(ellipse at 94% 0%,#9167ff30,transparent 48%),linear-gradient(135deg,#171b36,#101b2c 72%,#102a36);margin:2px 0 15px}
+.edu-intro:after{content:"✧";position:absolute;left:22px;top:0;font-size:94px;color:#9b8cff19;pointer-events:none}
+.edu-kicker{display:block;color:#73dce7;font-size:10px;font-weight:800;letter-spacing:2px}
+.edu-intro h3{font-size:21px;margin:9px 0 6px;color:#f4f5ff}
+.edu-intro p{font-size:12px;line-height:2;color:#b2bfd5;margin:0;max-width:620px}
+.edu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.edu-card{appearance:none;text-align:right;display:flex;flex-direction:column;gap:10px;min-height:236px;padding:18px 16px 15px;border:1px solid #354766;border-radius:19px;color:#f7f8ff;background:linear-gradient(150deg,#1a2a43,#111a2b 72%);cursor:pointer;transition:transform .22s,border-color .22s,box-shadow .22s;position:relative;overflow:hidden}
+.edu-card:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;left:-55px;top:48px;background:var(--edu-glow);filter:blur(38px);opacity:.3;pointer-events:none}
+.edu-card:hover,.edu-card:focus-visible{transform:translateY(-5px);border-color:var(--edu-accent);box-shadow:0 16px 38px #05091299;outline:none}
+.edu-card.study{--edu-accent:#59d8d2;--edu-glow:#1b9b9b}
+.edu-card.notes{--edu-accent:#a995ff;--edu-glow:#7756dc}
+.edu-card.summary{--edu-accent:#f0bd73;--edu-glow:#b77832}
+.edu-card-top,.edu-card-bottom{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.edu-icon{width:49px;height:49px;border-radius:16px;display:grid;place-items:center;font-size:25px;background:#ffffff0c;border:1px solid #ffffff20;box-shadow:inset 0 0 20px #ffffff08}
+.edu-index{font-size:11px;color:#8293af;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.edu-en{font-size:9px;letter-spacing:1.7px;color:var(--edu-accent);font-weight:800;position:relative;z-index:1}
+.edu-card strong{font-size:18px;line-height:1.5;position:relative;z-index:1}
+.edu-desc{font-size:11px;color:#aebbd0;line-height:1.9;min-height:42px;position:relative;z-index:1}
+.edu-card-bottom{margin-top:auto;padding-top:12px;border-top:1px solid #ffffff18;font-size:10px;color:#b5c2d6}
+.edu-enter{color:var(--edu-accent);font-weight:800}
+.edu-detail-head{display:flex;align-items:center;gap:16px;padding:17px 18px;margin:2px 0 14px;border:1px solid #3a4969;border-radius:18px;background:radial-gradient(ellipse at 0% 0%,#6555a522,transparent 55%),linear-gradient(120deg,#19263e,#101a2b)}
+.edu-detail-head h3{margin:5px 0;font-size:18px;color:#f4f5ff}
+.edu-detail-head p{margin:0;color:#aab8ce;font-size:11px}
+.edu-back{flex:none;border:1px solid #526483;border-radius:12px;background:#202e48;color:#e8edff;padding:11px 13px;font-size:11px;cursor:pointer}
+.edu-back:hover{border-color:#8e85ff;background:#293958}
+@media(max-width:760px){.edu-grid{grid-template-columns:1fr}.edu-card{min-height:190px}.edu-intro{padding:19px}.edu-detail-head{align-items:flex-start;flex-direction:column}}
+
 /* Dedicated visual system for the three written-exam shelves only */
 .written-intro{position:relative;overflow:hidden;padding:22px 22px 18px;border:1px solid #344264;border-radius:19px;background:radial-gradient(ellipse at 95% 0%,rgba(126,91,255,.2),transparent 48%),linear-gradient(135deg,#151e35,#101827);margin:2px 0 14px}
 .written-intro:after{content:"✦";position:absolute;right:22px;top:12px;font-size:76px;color:rgba(157,139,255,.12);pointer-events:none}
@@ -375,7 +403,7 @@ body:after{
 </section>
 <section class="workspace" id="learning">
 <div class="main-panel"><div class="resource-head"><h3 id="gradeTitle">زیست دهم</h3><span id="countLabel">۰ منبع</span></div>
-<div class="tabs" id="resourceTabs"><button class="tab active" data-kind="کتاب">کتاب درسی PDF</button><button class="tab" data-kind="آموزشی">کمک‌آموزشی</button><button class="tab" data-kind="تستی">آزمون تستی</button><button class="tab" data-kind="تشریحی">آزمون تشریحی</button></div>
+<div class="tabs" id="resourceTabs"><button class="tab active" data-kind="کتاب">کتاب درسی PDF</button><button class="tab" data-kind="آموزشی">کمک آموزشی</button><button class="tab" data-kind="تستی">آزمون تستی</button><button class="tab" data-kind="تشریحی">آزمون تشریحی</button></div>
 <div id="resourceList" class="resource-list"></div>
 </div>
 </section>
@@ -399,7 +427,7 @@ body:after{
 <script>
 const $=id=>document.getElementById(id);
 const kinds=["کتاب","آموزشی","تستی","تشریحی"], grades=["دهم","یازدهم","دوازدهم"];
-let grade="دهم",kind="کتاب",resources=[],examSection=null;
+let grade="دهم",kind="کتاب",resources=[],examSection=null,eduSection=null;
 const key="arko-biology-resources-v1";
 function validUrl(s){try{let u=new URL(s);return ["http:","https:"].includes(u.protocol)?u.href:null}catch{return null}}
 function load(){try{resources=JSON.parse(localStorage.getItem(key)||"[]");if(!Array.isArray(resources))resources=[]}catch{resources=[]}
@@ -408,6 +436,43 @@ function persist(){try{localStorage.setItem(key,JSON.stringify(resources))}catch
 function render(){
  $("gradeTitle").textContent="زیست "+grade;
  $("resourceList").innerHTML="";
+ if(kind==="آموزشی"){
+  const sections=[
+   {id:"study",title:"کمک درسی",en:"STUDY COMPANION",icon:"🎓",desc:"منابع تکمیلی، تمرین‌های آموزشی و مطالبی برای عمیق‌تر فهمیدن درس",tone:"study"},
+   {id:"notes",title:"جزوه",en:"STUDY NOTES",icon:"📚",desc:"جزوه‌های منظم و کاربردی برای مطالعه، یادگیری و مرور مباحث",tone:"notes"},
+   {id:"summary",title:"خلاصه درس‌ها",en:"QUICK SUMMARIES",icon:"⚡",desc:"مرورهای فشرده و نکته‌محور برای جمع‌بندی سریع هر مبحث",tone:"summary"}
+  ];
+  if(!eduSection){
+   $("countLabel").textContent="۳ فضای یادگیری";
+   const intro=document.createElement("div");intro.className="edu-intro";
+   intro.innerHTML='<span class="edu-kicker">ARCO · LEARNING HUB</span><h3>دانشت را یک سطح بالاتر ببر</h3><p>سه مسیر مستقل برای یادگیری عمیق‌تر، دسترسی به جزوه‌ها و مرور سریع درس‌ها. پایه تحصیلی انتخاب‌شده برای همه قفسه‌ها حفظ می‌شود.</p>';
+   $("resourceList").append(intro);
+   const grid=document.createElement("div");grid.className="edu-grid";
+   sections.forEach((item,index)=>{
+    const count=resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===item.id).length;
+    const card=document.createElement("button");card.type="button";card.className="edu-card "+item.tone;card.dataset.eduSection=item.id;
+    card.innerHTML='<span class="edu-card-top"><span class="edu-icon">'+item.icon+'</span><span class="edu-index">0'+(index+1)+' / ARCO</span></span><span class="edu-en">'+item.en+'</span><strong>'+item.title+'</strong><span class="edu-desc">'+item.desc+'</span><span class="edu-card-bottom"><span>'+count+' منبع</span><span class="edu-enter">ورود به فضا ↗</span></span>';
+    grid.append(card);
+   });
+   $("resourceList").append(grid);
+   return;
+  }
+  const chosen=sections.find(x=>x.id===eduSection);
+  if(!chosen){eduSection=null;render();return}
+  const arr=resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===eduSection);
+  $("countLabel").textContent=arr.length+" منبع";
+  const head=document.createElement("div");head.className="edu-detail-head";
+  head.innerHTML='<button type="button" class="edu-back" data-edu-back>← بازگشت به سه بخش</button><div><span class="edu-kicker">'+chosen.en+'</span><h3>'+chosen.icon+' '+chosen.title+'</h3><p>قفسه اختصاصی زیست '+grade+'</p></div>';
+  $("resourceList").append(head);
+  if(!arr.length){
+   const empty=document.createElement("div");empty.className="written-empty";
+   empty.innerHTML='<span class="written-empty-icon">✦</span><strong>این فضا آماده دریافت منابع است</strong><p>محتوای مربوط به این بخش پس از افزودن منابع، در همین قفسه نمایش داده می‌شود.</p><span class="written-empty-note">هنوز منبعی در این بخش ثبت نشده است</span>';
+   $("resourceList").append(empty);return;
+  }
+  arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent="زیست "+x.grade+" · "+chosen.title;info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)});
+  return;
+ }
+ eduSection=null;
  if(kind==="تشریحی"){
   const sections=[
    {id:"final",title:"امتحان‌های نهایی",en:"FINAL EXAMS",icon:"🏛️",desc:"سوالات و PDF امتحان‌های نهایی سال‌های گذشته",tone:"final"},
@@ -451,7 +516,7 @@ function render(){
  if(!arr.length){$("resourceList").innerHTML='<div class="empty">این قفسه فعلاً خالی است 🌱<br>به‌زودی منابع این بخش اینجا قرار می‌گیرند.</div>';return}
  arr.forEach(x=>{let d=document.createElement("div");d.className="resource";let info=document.createElement("div"),b=document.createElement("strong"),sub=document.createElement("small"),a=document.createElement("a");b.textContent=x.title;sub.textContent="زیست "+x.grade+" · "+x.kind;info.append(b,sub);a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="مشاهده ↗";d.append(info,a);$("resourceList").append(d)})
 }
-$("resourceList").addEventListener("click",e=>{const card=e.target.closest("[data-exam-section]");if(card){examSection=card.dataset.examSection;render();return}if(e.target.closest("[data-exam-back]")){examSection=null;render()}});
+$("resourceList").addEventListener("click",e=>{const edu=e.target.closest("[data-edu-section]");if(edu){eduSection=edu.dataset.eduSection;render();return}if(e.target.closest("[data-edu-back]")){eduSection=null;render();return}const card=e.target.closest("[data-exam-section]");if(card){examSection=card.dataset.examSection;render();return}if(e.target.closest("[data-exam-back]")){examSection=null;render()}});
 function toast(t){$("toast").textContent=t;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2400)}
 document.querySelectorAll(".grade").forEach(b=>b.addEventListener("click",()=>{grade=b.dataset.grade;examSection=null;document.querySelectorAll(".grade").forEach(x=>x.classList.toggle("active",x===b));render();$("learning").scrollIntoView({behavior:"smooth",block:"start"})}));
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{kind=b.dataset.kind;examSection=null;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));render()}));
