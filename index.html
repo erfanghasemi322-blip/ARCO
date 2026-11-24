@@ -274,7 +274,34 @@ body:after{
 }
 
 </style>
-<style id="arcoLockStyle">body> :not(#arcoGate){display:none!important}#arcoGate{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 18% 12%,#50328a66,transparent 42%),radial-gradient(ellipse at 90% 85%,#075c7866,transparent 40%),#050611;color:#f5f2ff;font-family:Vazirmatn,Tahoma,sans-serif}#arcoGate .gate-card{width:min(100%,430px);padding:34px 28px;border:1px solid #a879ff66;border-radius:26px;background:linear-gradient(145deg,#12132af2,#09182af5);box-shadow:0 25px 90px #000b,0 0 45px #815bff22;text-align:center}#arcoGate .gate-logo{width:66px;height:66px;margin:0 auto 17px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#b28aff,#5a38d8 48%,#16bce8);box-shadow:0 0 30px #8e61ff88;font-size:27px;font-weight:900;letter-spacing:2px}#arcoGate h1{margin:0;font-size:27px;letter-spacing:5px}#arcoGate .gate-sub{margin:8px 0 25px;color:#aeb8d4;font-size:13px;line-height:2}#arcoGate label{display:block;text-align:right;margin:0 2px 8px;color:#d9d7f0;font-size:12px}#arcoGate input{width:100%;padding:14px 15px;border:1px solid #55477d;border-radius:13px;background:#080d1c;color:#fff;outline:none;text-align:center;letter-spacing:2px;font-size:17px}#arcoGate input:focus{border-color:#a879ff;box-shadow:0 0 0 3px #a879ff22}#arcoGate button{width:100%;margin-top:13px;padding:13px;border:0;border-radius:13px;background:linear-gradient(100deg,#9875ff,#28bfd7);color:#fff;font-weight:800;font-size:14px;cursor:pointer}#arcoGate .gate-error{min-height:23px;margin:12px 0 0;color:#ff9aaf;font-size:12px}#arcoGate .gate-foot{margin-top:18px;color:#737e9d;font-size:10px;letter-spacing:1px}</style></head>
+<style id="arcoLockStyle">body> :not(#arcoGate){display:none!important}#arcoGate{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 18% 12%,#50328a66,transparent 42%),radial-gradient(ellipse at 90% 85%,#075c7866,transparent 40%),#050611;color:#f5f2ff;font-family:Vazirmatn,Tahoma,sans-serif}#arcoGate .gate-card{width:min(100%,430px);padding:34px 28px;border:1px solid #a879ff66;border-radius:26px;background:linear-gradient(145deg,#12132af2,#09182af5);box-shadow:0 25px 90px #000b,0 0 45px #815bff22;text-align:center}#arcoGate .gate-logo{width:66px;height:66px;margin:0 auto 17px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#b28aff,#5a38d8 48%,#16bce8);box-shadow:0 0 30px #8e61ff88;font-size:27px;font-weight:900;letter-spacing:2px}#arcoGate h1{margin:0;font-size:27px;letter-spacing:5px}#arcoGate .gate-sub{margin:8px 0 25px;color:#aeb8d4;font-size:13px;line-height:2}#arcoGate label{display:block;text-align:right;margin:0 2px 8px;color:#d9d7f0;font-size:12px}#arcoGate input{width:100%;padding:14px 15px;border:1px solid #55477d;border-radius:13px;background:#080d1c;color:#fff;outline:none;text-align:center;letter-spacing:2px;font-size:17px}#arcoGate input:focus{border-color:#a879ff;box-shadow:0 0 0 3px #a879ff22}#arcoGate button{width:100%;margin-top:13px;padding:13px;border:0;border-radius:13px;background:linear-gradient(100deg,#9875ff,#28bfd7);color:#fff;font-weight:800;font-size:14px;cursor:pointer}#arcoGate .gate-error{min-height:23px;margin:12px 0 0;color:#ff9aaf;font-size:12px}#arcoGate .gate-foot{margin-top:18px;color:#737e9d;font-size:10px;letter-spacing:1px}</style><style>
+/* ARCO interactive textbook quizzes */
+.quiz-shell{display:grid;gap:16px}
+.quiz-hero{padding:22px;border:1px solid #7563c477;border-radius:20px;background:linear-gradient(120deg,#171332,#102a3b);box-shadow:0 16px 42px #0005}
+.quiz-hero h3{margin:0 0 8px;font-size:21px}.quiz-hero p{margin:0;color:#c5c4df;font-size:12px;line-height:2}
+.quiz-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.quiz-unit{padding:17px;border:1px solid #34496b;border-radius:17px;background:linear-gradient(145deg,#15223a,#0d1729)}
+.quiz-unit h4{margin:0 0 6px;font-size:15px;color:#8de9ee}.quiz-unit p{margin:0 0 13px;color:#aebbd2;font-size:11px;line-height:1.8}
+.quiz-unit button,.quiz-action{border:0;border-radius:11px;padding:11px 15px;color:#fff;font-weight:700;background:linear-gradient(110deg,#7055c9,#087e91)}
+.quiz-unit small{display:block;color:#9baec9;font-size:10px;margin-top:9px}
+.quiz-panel{padding:20px;border:1px solid #6c5da0;border-radius:20px;background:linear-gradient(145deg,#10182d,#17152f);display:grid;gap:14px}
+.quiz-meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#9fe8ed;font-size:11px}
+.quiz-progress{height:7px;border-radius:20px;background:#28344d;overflow:hidden}.quiz-progress span{height:100%;display:block;background:linear-gradient(90deg,#8b68ff,#44dce2);transition:width .25s}
+.quiz-question{font-size:16px;line-height:2;margin:2px 0 0}
+.quiz-options{display:grid;gap:9px}
+.quiz-option{width:100%;text-align:right;padding:13px 14px;border:1px solid #344765;border-radius:13px;background:#0c1729;color:#eaf2ff;line-height:1.8;transition:.18s}
+.quiz-option:hover:not(:disabled){border-color:#8f7cff;background:#1b2140}
+.quiz-option:disabled{cursor:default;opacity:1}
+.quiz-option.correct{border-color:#39c99b;background:#103b35;color:#b9ffe8}
+.quiz-option.incorrect{border-color:#f17b88;background:#44202e;color:#ffd6dc}
+.quiz-feedback{padding:13px 15px;border-radius:13px;background:#17243b;border:1px solid #405779;color:#dceaff;font-size:12px;line-height:2}
+.quiz-feedback.good{border-color:#39c99b;background:#10372f}.quiz-feedback.bad{border-color:#e17b89;background:#3a202c}
+.quiz-result{text-align:center;padding:22px;border:1px solid #4b6685;border-radius:16px;background:#101e32}
+.quiz-result strong{display:block;font-size:32px;color:#83e8e7;margin:7px}
+.quiz-empty{padding:18px;border:1px dashed #596b8b;border-radius:14px;color:#c3cbe0;font-size:12px;line-height:2}
+@media(max-width:620px){.quiz-groups{grid-template-columns:1fr}.quiz-panel{padding:15px}.quiz-question{font-size:14px}}
+</style>
+</head>
 <body><div id="arcoGate" dir="rtl"><div class="gate-card"><div class="gate-logo">A</div><h1>ARCO</h1><p class="gate-sub">به جهان علمی آرکو خوش آمدی.<br>برای ورود، کد دسترسی را وارد کن.</p><form id="arcoGateForm"><label for="arcoGateCode">کد دسترسی</label><input id="arcoGateCode" type="password" placeholder="کد ورود را وارد کن" autocomplete="off"><button type="submit">ورود به آرکو ←</button><p class="gate-error" id="arcoGateError" aria-live="polite"></p></form><div class="gate-foot">ARCO · PRIVATE ACCESS</div></div></div><script>(function(){const gate=document.getElementById("arcoGate"),style=document.getElementById("arcoLockStyle"),form=document.getElementById("arcoGateForm"),input=document.getElementById("arcoGateCode"),error=document.getElementById("arcoGateError");function unlock(){try{localStorage.setItem("arco-access-granted","yes")}catch(e){}if(style)style.remove();if(gate)gate.remove()}try{if(localStorage.getItem("arco-access-granted")==="yes"){unlock();return}}catch(e){}form.addEventListener("submit",function(e){e.preventDefault();if(input.value.trim()==="ARCO-1405"){unlock()}else{error.textContent="کد واردشده درست نیست. دوباره تلاش کن.";input.value="";input.focus()}})})();</script>
 <main class="shell">
 <header class="top"><div class="brand"><div class="logo"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 5c22 7 22 23 0 30M31 5C9 12 9 28 31 35M12 10h16M9 20h22M12 30h16" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M14 14h12M14 26h12" stroke="#fff" stroke-width="1.5"/></svg></div><div><h1>ARCO</h1><small>Future Science Universe</small></div></div><div class="top-actions"><button class="ghost" id="homeBtn">صفحه اصلی</button><button class="ghost" id="shareBtn">اشتراک‌گذاری ↗</button></div></header>
@@ -486,6 +513,118 @@ load();render();
     el.style.transitionDelay=(Math.min(index%4,3)*55)+'ms';
     observer.observe(el);
   });
+})();
+</script>
+
+
+<script>
+/* ARCO quiz engine · textbook-aligned starter bank for grade 11/12 biology */
+(function(){
+'use strict';
+const bank={
+'یازدهم':[
+{chapter:'فصل ۱ · تنظیم عصبی',unit:'گفتار ۱ · یاخته‌های بافت عصبی',questions:[
+['کدام بخش نورون معمولاً پیام‌های ورودی را دریافت می‌کند؟',['آسه','دندریت','پایانه آسه','غلاف میلین'],1,'دندریت‌ها معمولاً پیام‌ها را از یاخته‌های دیگر دریافت و به سوی جسم یاخته‌ای هدایت می‌کنند.'],
+['مرکز کنترل فعالیت‌های یاخته عصبی کدام بخش است؟',['جسم یاخته‌ای','گره رانویه','غلاف میلین','پایانه آسه'],0,'هسته در جسم یاخته‌ای قرار دارد و فعالیت‌های یاخته را تنظیم می‌کند.'],
+['جهت معمول انتقال پیام در یک نورون کدام است؟',['آسه ← جسم یاخته‌ای ← دندریت','دندریت ← جسم یاخته‌ای ← آسه','پایانه آسه ← دندریت ← هسته','غلاف میلین ← هسته ← دندریت'],1,'در الگوی معمول، پیام از دندریت‌ها دریافت می‌شود، از جسم یاخته‌ای می‌گذرد و در آسه به سوی پایانه‌ها می‌رود.'],
+['کدام یاخته‌ها در دستگاه عصبی نقش پشتیبانی و حفاظت از نورون‌ها دارند؟',['یاخته‌های ماهیچه‌ای','یاخته‌های پوششی','یاخته‌های پشتیبان','گلبول‌های قرمز'],2,'یاخته‌های پشتیبان یا نوروگلیا در تغذیه، حفاظت و پشتیبانی نورون‌ها نقش دارند.'],
+['غلاف میلین چه اثری بر هدایت پیام عصبی دارد؟',['هدایت را کند می‌کند','هدایت را سریع‌تر می‌کند','مانع ایجاد پیام می‌شود','فقط پیام‌های شیمیایی را عبور می‌دهد'],1,'غلاف میلین با عایق‌کردن بخش‌هایی از آسه، سرعت هدایت پیام را افزایش می‌دهد.'],
+['گره‌های رانویه در کدام قسمت دیده می‌شوند؟',['بین قطعه‌های غلاف میلین آسه','درون هسته نورون','روی دندریت‌ها','درون جسم یاخته‌ای'],0,'غلاف میلین پیوسته نیست و فاصله‌های میان قطعات آن گره‌های رانویه نام دارند.'],
+['هدایت جهشی پیام عصبی در کدام آسه‌ها رخ می‌دهد؟',['فاقد غلاف میلین','دارای غلاف میلین','فاقد آسه','دارای چند هسته'],1,'در آسه میلین‌دار، پیام از یک گره رانویه به گره بعدی می‌جهد و سریع‌تر هدایت می‌شود.'],
+['ناقل عصبی معمولاً از کدام بخش نورون آزاد می‌شود؟',['دندریت','هسته','پایانه آسه','غلاف میلین'],2,'ناقل‌های عصبی از پایانه آسه به فضای سیناپسی آزاد می‌شوند.'],
+['فضای باریک میان دو یاخته در محل ارتباط شیمیایی چه نام دارد؟',['گره رانویه','شکاف سیناپسی','ماده خاکستری','غلاف میلین'],1,'در سیناپس شیمیایی، دو یاخته با شکاف سیناپسی از هم جدا هستند.'],
+['کدام عبارت درباره نورون درست است؟',['همه نورون‌ها دقیقاً شکل یکسان دارند','نورون فقط پیام شیمیایی جابه‌جا می‌کند','نورون یاخته تخصص‌یافته دریافت و انتقال پیام عصبی است','نورون فاقد غشای یاخته‌ای است'],2,'نورون یاخته تخصص‌یافته دستگاه عصبی برای دریافت، پردازش و انتقال پیام عصبی است.']
+]},
+{chapter:'فصل ۱ · تنظیم عصبی',unit:'گفتار ۲ · ساختار دستگاه عصبی',questions:[
+['دستگاه عصبی مرکزی از کدام بخش‌ها تشکیل شده است؟',['مغز و نخاع','اعصاب مغزی و نخاعی','گیرنده‌ها و ماهیچه‌ها','فقط مغز'],0,'دستگاه عصبی مرکزی شامل مغز و نخاع است.'],
+['کدام مورد جزو دستگاه عصبی محیطی است؟',['مخ','مخچه','نخاع','اعصاب مغزی و نخاعی'],3,'اعصاب مغزی و نخاعی، دستگاه عصبی محیطی را تشکیل می‌دهند.'],
+['وظیفه اصلی بخش حسی دستگاه عصبی محیطی چیست؟',['انتقال فرمان به ماهیچه','انتقال اطلاعات گیرنده‌ها به مرکز عصبی','ساخت هورمون','تولید گلبول قرمز'],1,'نورون‌های حسی اطلاعات را از گیرنده‌ها به دستگاه عصبی مرکزی می‌رسانند.'],
+['کدام بخش دستگاه عصبی محیطی فعالیت‌های ارادی ماهیچه‌های اسکلتی را کنترل می‌کند؟',['خودمختار','پیکری','سمپاتیک','پاراسمپاتیک'],1,'دستگاه عصبی پیکری با دریافت حس‌های پیکری و کنترل ماهیچه‌های اسکلتی ارتباط دارد.'],
+['تنظیم فعالیت‌هایی مانند ضربان قلب و گوارش عمدتاً بر عهده کدام بخش است؟',['دستگاه عصبی خودمختار','دستگاه عصبی پیکری','قشر مخ','اعصاب حسی پوست'],0,'دستگاه عصبی خودمختار فعالیت اندام‌های داخلی را تنظیم می‌کند.'],
+['کدام بخش مغز در هماهنگی حرکات و حفظ تعادل نقش مهمی دارد؟',['مخچه','نخاع','تالاموس','لوب بویایی'],0,'مخچه در هماهنگی حرکات، تعادل و تنظیم وضعیت بدن نقش دارد.'],
+['مرکز بسیاری از پاسخ‌های انعکاسی ساده کجاست؟',['قشر مخ','نخاع','شبکیه','مخچه'],1,'بسیاری از انعکاس‌ها از طریق مدار عصبی نخاعی و بدون نیاز به تصمیم‌گیری آگاهانه مخ انجام می‌شوند.'],
+['در قوس انعکاسی، پیام حسی ابتدا به کجا وارد می‌شود؟',['نورون حرکتی','گیرنده حسی','ماهیچه','غده'],1,'محرک ابتدا توسط گیرنده دریافت می‌شود و پیام از راه نورون حسی به مرکز عصبی می‌رود.'],
+['ماده خاکستری دستگاه عصبی عمدتاً شامل چیست؟',['فقط آسه‌های میلین‌دار','جسم یاخته‌ای نورون‌ها و بخش‌هایی از زوائد آنها','فقط استخوان','فقط رگ‌های خونی'],1,'ماده خاکستری به‌ویژه از جسم یاخته‌ای نورون‌ها و بخش‌هایی از زوائد عصبی تشکیل شده است.'],
+['کدام گزینه تفاوت درست بخش سمپاتیک و پاراسمپاتیک را بیان می‌کند؟',['هر دو همیشه اثر یکسان دارند','سمپاتیک معمولاً بدن را برای فعالیت و پاراسمپاتیک به حالت آرامش و گوارش کمک می‌کند','پاراسمپاتیک فقط حرکت ارادی را کنترل می‌کند','سمپاتیک فقط در خواب فعال است'],1,'این دو بخش خودمختار در بسیاری از اندام‌ها اثرهای متقابل و تنظیم‌کننده دارند.']
+]}
+],
+'دوازدهم':[
+{chapter:'فصل ۱ · مولکول‌های اطلاعاتی',unit:'بخش ۱ · نوکلئیک اسیدها',questions:[
+['واحد سازنده اسیدهای نوکلئیک چیست؟',['آمینواسید','نوکلئوتید','اسید چرب','گلوکز'],1,'دنا و رنا پلیمرهایی هستند که از نوکلئوتیدها ساخته شده‌اند.'],
+['هر نوکلئوتید از کدام اجزا تشکیل می‌شود؟',['قند پنج‌کربنی، باز آلی و گروه فسفات','گلیسرول و سه اسید چرب','آمینواسید و فسفات','قند شش‌کربنی و دو باز آلی'],0,'هر نوکلئوتید شامل قند پنج‌کربنی، باز آلی نیتروژن‌دار و گروه فسفات است.'],
+['کدام باز در دنا وجود دارد و در رنا با یوراسیل جایگزین می‌شود؟',['آدنین','گوانین','تیمین','سیتوزین'],2,'در دنا تیمین وجود دارد، در حالی که در رنا به جای آن یوراسیل دیده می‌شود.'],
+['کدام جفت باز در دنا مکمل یکدیگرند؟',['آدنین و گوانین','آدنین و تیمین','سیتوزین و تیمین','گوانین و تیمین'],1,'در دنا آدنین با تیمین و گوانین با سیتوزین جفت می‌شود.'],
+['قند موجود در ساختار دنا کدام است؟',['ریبوز','دئوکسی‌ریبوز','گلوکز','فروکتوز'],1,'قند دنا دئوکسی‌ریبوز است؛ قند رنا ریبوز است.'],
+['کدام ویژگی درباره دو رشته دنا درست است؟',['هم‌جهت‌اند','جهت‌گیری مخالف دارند','از آمینواسید ساخته شده‌اند','هیچ پیوندی میان بازهایشان نیست'],1,'دو رشته دنا پادموازی‌اند و جهت‌گیری ۵ به ۳ آنها مخالف یکدیگر است.'],
+['پیوند میان نوکلئوتیدهای یک رشته دنا از چه نوعی است؟',['هیدروژنی','فسفودی‌استر','پپتیدی','یونی'],1,'نوکلئوتیدهای هر رشته با پیوند فسفودی‌استر به یکدیگر متصل می‌شوند.'],
+['پیوند میان بازهای مکمل دو رشته دنا عمدتاً از چه نوع است؟',['پپتیدی','فسفودی‌استر','هیدروژنی','گلیکوزیدی'],2,'بازهای مکمل دو رشته با پیوندهای هیدروژنی به هم متصل می‌شوند.'],
+['نتیجه اصلی آزمایش گریفیت چه بود؟',['اثبات ساختار دو رشته‌ای دنا','نشان‌دادن امکان انتقال عامل تغییر دهنده ویژگی میان باکتری‌ها','کشف ریبوزوم','اثبات نقش مستقیم پروتئین در همانندسازی'],1,'آزمایش گریفیت نشان داد ماده‌ای می‌تواند ویژگی بیماری‌زایی را به باکتری‌های فاقد پوشینه منتقل کند.'],
+['در آزمایش‌های ایوری و همکاران، کدام مولکول عامل اصلی انتقال صفات وراثتی شناخته شد؟',['پروتئین','چربی','دنا','قند'],2,'نتایج آزمایش‌های ایوری و همکاران نشان دادند دنا عامل اصلی انتقال اطلاعات وراثتی است.']
+]},
+{chapter:'فصل ۱ · مولکول‌های اطلاعاتی',unit:'بخش ۲ · همانندسازی دنا',questions:[
+['هدف همانندسازی دنا چیست؟',['ساخت پروتئین','دو برابرشدن دنا پیش از تقسیم یاخته','ساخت غشای یاخته','تولید ATP'],1,'پیش از تقسیم یاخته، دنا همانندسازی می‌شود تا اطلاعات وراثتی به یاخته‌های حاصل برسد.'],
+['در همانندسازی نیمه‌محافظتی، هر مولکول دنا از چه رشته‌هایی تشکیل می‌شود؟',['دو رشته کاملاً جدید','یک رشته قدیمی و یک رشته جدید','دو رشته قدیمی','یک رشته RNA و یک رشته DNA'],1,'در الگوی نیمه‌محافظتی، هر مولکول حاصل یک رشته از مولکول اولیه و یک رشته تازه‌ساخته‌شده دارد.'],
+['کدام آنزیم با بازکردن دو رشته دنا در آغاز همانندسازی نقش دارد؟',['هلیکاز','لیگاز','آمیلاز','پپتیدیل‌ترانسفراز'],0,'هلیکاز پیوندهای هیدروژنی میان بازهای مکمل را می‌گسلد و دو رشته را از هم جدا می‌کند.'],
+['آنزیم دنا بسپاراز نوکلئوتیدها را به کدام انتهای رشته در حال ساخت اضافه می‌کند؟',['انتهای ۵','انتهای ۳','هر دو انتها به یک اندازه','به وسط رشته'],1,'دنا بسپاراز رشته جدید را در جهت ۵ به ۳ می‌سازد و نوکلئوتید را به انتهای ۳ می‌افزاید.'],
+['چرا آغازگر در همانندسازی لازم است؟',['برای اتصال دو مولکول پروتئین','برای فراهم‌کردن انتهای ۳ آزاد جهت آغاز ساخت رشته','برای تجزیه دنا','برای ساخت غشای هسته'],1,'دنا بسپاراز به‌تنهایی آغازگر نمی‌سازد و برای شروع به انتهای ۳ آزاد نیاز دارد.'],
+['نقش اصلی دنا لیگاز چیست؟',['بازکردن دو رشته','اتصال قطعات دنا به یکدیگر','ساخت آغازگر RNA','شکستن بازهای آلی'],1,'دنا لیگاز شکاف‌های میان قطعات دنا را با ایجاد پیوند فسفودی‌استر می‌بندد.'],
+['قطعات اوکازاکی در کدام رشته ساخته می‌شوند؟',['رشته پیشرو','رشته پیرو','هر دو رشته به‌طور پیوسته','در RNA پیام‌رسان'],1,'به علت جهت‌گیری پادموازی رشته‌ها، رشته پیرو به‌صورت ناپیوسته و قطعه‌قطعه ساخته می‌شود.'],
+['کدام عبارت درباره رشته پیشرو درست است؟',['در جهت دورشدن از محل بازشدن دو رشته به‌صورت قطعه‌ای ساخته می‌شود','به‌طور پیوسته در جهت حرکت چنگال همانندسازی ساخته می‌شود','از پروتئین ساخته شده است','فقط در یاخته‌های جانوری وجود دارد'],1,'رشته پیشرو در جهت حرکت چنگال همانندسازی به‌طور پیوسته ساخته می‌شود.'],
+['در همانندسازی، ترتیب نوکلئوتیدهای رشته جدید بر چه اساسی تعیین می‌شود؟',['تصادفی','مکمل‌بودن با رشته الگو','اندازه هسته','نوع غشای یاخته'],1,'رشته الگو تعیین می‌کند چه نوکلئوتیدهایی بر اساس اصل مکمل‌بودن به رشته جدید افزوده شوند.'],
+['اگر در یک جایگاه رشته الگو آدنین باشد، در رشته دنا‌ی مکمل کدام باز قرار می‌گیرد؟',['گوانین','سیتوزین','تیمین','یوراسیل'],2,'در دنا آدنین با تیمین جفت می‌شود.']
+]},
+{chapter:'فصل ۱ · مولکول‌های اطلاعاتی',unit:'بخش ۳ · پروتئین‌ها',questions:[
+['واحدهای سازنده پروتئین‌ها چه نام دارند؟',['نوکلئوتید','آمینواسید','اسید چرب','مونوساکارید'],1,'پروتئین‌ها زنجیره‌هایی از آمینواسیدها هستند.'],
+['چه نوع پیوندی آمینواسیدهای یک زنجیره پروتئینی را به هم متصل می‌کند؟',['هیدروژنی','فسفودی‌استر','پپتیدی','گلیکوزیدی'],2,'پیوند پپتیدی میان گروه کربوکسیل یک آمینواسید و گروه آمین آمینواسید بعدی تشکیل می‌شود.'],
+['توالی آمینواسیدهای یک زنجیره پروتئینی چه سطحی از ساختار را تعیین می‌کند؟',['ساختار نخستین','ساختار دوم','ساختار سوم','ساختار چهارم'],0,'ساختار نخستین پروتئین همان ترتیب خطی آمینواسیدها در زنجیره است.'],
+['کدام مورد نمونه‌ای از عملکرد پروتئین‌هاست؟',['کاتالیز واکنش‌های زیستی','ذخیره اطلاعات وراثتی در دنا','تشکیل همه قندهای یاخته','جایگزینی کامل آب در یاخته'],0,'آنزیم‌ها پروتئین‌هایی هستند که سرعت واکنش‌های زیستی را افزایش می‌دهند؛ پروتئین‌ها عملکردهای متنوع دیگری هم دارند.'],
+['تغییر شکل سه‌بعدی پروتئین تا حد از دست‌رفتن عملکرد آن چه نام دارد؟',['همانندسازی','واسرشتگی','رونویسی','جهش'],1,'واسرشتگی می‌تواند بر اثر تغییر شرایطی مانند دما یا pH رخ دهد و شکل و عملکرد پروتئین را مختل کند.'],
+['کدام ویژگی آمینواسیدها در تفاوت خواص آنها نقش مهمی دارد؟',['نوع گروه جانبی','تعداد رشته‌های دنا','وجود غلاف میلین','تعداد فسفات‌های قند'],0,'گروه جانبی یا R در آمینواسیدها متفاوت است و در ویژگی‌های شیمیایی آنها نقش دارد.'],
+['ساختار دوم پروتئین عمدتاً با کدام نوع پیوند پایدار می‌شود؟',['پیوند هیدروژنی در ستون فقرات زنجیره','پیوند فسفودی‌استر','پیوند میان بازهای دنا','پیوند یونی میان نوکلئوتیدها'],0,'پیوندهای هیدروژنی میان بخش‌های ستون فقرات زنجیره در پایداری ساختارهایی مانند مارپیچ آلفا و صفحه بتا نقش دارند.'],
+['کدام گزینه درباره آنزیم‌ها درست است؟',['همه آنزیم‌ها چربی‌اند','آنزیم‌ها سرعت واکنش را افزایش می‌دهند','آنزیم‌ها فقط در هسته فعالیت دارند','آنزیم‌ها در پایان واکنش همیشه مصرف می‌شوند'],1,'آنزیم‌ها کاتالیزورهای زیستی‌اند و سرعت واکنش را افزایش می‌دهند، بی‌آنکه در پایان واکنش به‌طور پایدار مصرف شوند.'],
+['چند زنجیره پلی‌پپتیدیِ کنار هم‌قرارگرفته می‌توانند کدام سطح ساختار را ایجاد کنند؟',['نخستین','دوم','سوم','چهارم'],3,'ساختار چهارم از کنار هم قرارگرفتن چند زنجیره پلی‌پپتیدی تشکیل می‌شود.'],
+['کدام عبارت درباره رابطه ساختار و عملکرد پروتئین درست است؟',['عملکرد پروتئین مستقل از شکل آن است','توالی آمینواسیدها در شکل‌گیری ساختار و عملکرد پروتئین اثر دارد','همه پروتئین‌ها ساختار یکسان دارند','تغییر یک آمینواسید هرگز اثری ندارد'],1,'توالی آمینواسیدها بر تاخوردگی و شکل فضایی پروتئین اثر می‌گذارد و این شکل با عملکرد آن ارتباط دارد.']
+]}
+]
+};
+const state={unit:null,index:0,answers:[],locked:false};
+const root=document.getElementById('resourceList');
+const oldRender=window.render;
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function showShelf(){
+ const gradeTitle=document.getElementById('gradeTitle'),count=document.getElementById('countLabel');
+ gradeTitle.textContent='زیست '+window.grade;
+ const sets=bank[window.grade]||[];
+ count.textContent=sets.length+' آزمون گفتار/بخش';
+ root.innerHTML='<div class="quiz-shell"><div class="quiz-hero"><h3>🧠 آزمون‌های تستی فصل‌به‌فصل</h3><p>هر گفتار یا بخش، آزمون مستقل ۱۰ سؤالی دارد. پاسخ را انتخاب کن تا همان لحظه نتیجه، گزینه صحیح و توضیح آموزشی را ببینی.</p></div><div class="quiz-groups">'+sets.map((u,i)=>'<article class="quiz-unit"><h4>'+escapeHtml(u.chapter)+'</h4><p>'+escapeHtml(u.unit)+' · ۱۰ سؤال چهارگزینه‌ای</p><button type="button" data-quiz-start="'+i+'">شروع آزمون ←</button><small>پاسخ‌گویی مرحله‌ای · نمایش توضیح پس از هر پاسخ</small></article>').join('')+'</div></div>';
+ root.querySelectorAll('[data-quiz-start]').forEach(b=>b.addEventListener('click',()=>start(+b.dataset.quizStart)));
+}
+function start(i){state.unit=(bank[window.grade]||[])[i];state.index=0;state.answers=[];state.locked=false;drawQuestion();}
+function drawQuestion(){
+ const u=state.unit,q=u.questions[state.index],n=state.index+1;
+ root.innerHTML='<div class="quiz-panel"><div class="quiz-meta"><span>'+escapeHtml(u.chapter)+' · '+escapeHtml(u.unit)+'</span><span>سؤال '+n+' از ۱۰</span></div><div class="quiz-progress"><span style="width:'+((n-1)*10)+'%"></span></div><h3 class="quiz-question">'+escapeHtml(q[0])+'</h3><div class="quiz-options">'+q[1].map((o,i)=>'<button class="quiz-option" type="button" data-answer="'+i+'">'+String.fromCharCode(1776+i)+' ) '+escapeHtml(o)+'</button>').join('')+'</div><div id="quizFeedback" aria-live="polite"></div><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><button class="quiz-action" id="quizBack" type="button">بازگشت به فهرست آزمون‌ها</button><button class="quiz-action" id="quizNext" type="button" disabled>'+(n===10?'دیدن نتیجه':'سؤال بعدی ←')+'</button></div></div>';
+ root.querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>choose(+b.dataset.answer)));
+ document.getElementById('quizBack').addEventListener('click',showShelf);
+ document.getElementById('quizNext').addEventListener('click',()=>{if(!state.locked)return;if(state.index<9){state.index++;state.locked=false;drawQuestion()}else drawResult()});
+}
+function choose(choice){
+ if(state.locked)return;state.locked=true;
+ const q=state.unit.questions[state.index],correct=choice===q[2];state.answers.push({choice,correct});
+ root.querySelectorAll('[data-answer]').forEach((b,i)=>{b.disabled=true;if(i===q[2])b.classList.add('correct');else if(i===choice&&!correct)b.classList.add('incorrect')});
+ const fb=document.getElementById('quizFeedback');fb.className='quiz-feedback '+(correct?'good':'bad');
+ fb.innerHTML=(correct?'✓ پاسخ درست است.':'✕ این گزینه درست نیست. پاسخ صحیح: '+String.fromCharCode(1776+q[2])+' ) '+escapeHtml(q[1][q[2]]))+ '<br>'+escapeHtml(q[3]);
+ document.getElementById('quizNext').disabled=false;
+}
+function drawResult(){
+ const score=state.answers.filter(a=>a.correct).length;
+ root.innerHTML='<div class="quiz-panel"><div class="quiz-result"><div>🏁 آزمون تمام شد</div><strong>'+score+' از ۱۰</strong><div>درست: '+score+' · غلط: '+(10-score)+'</div><p>'+ (score>=9?'عالی! تسلطت خیلی خوبه.':score>=7?'خوب پیش رفتی؛ چند نکته را مرور کن.':score>=5?'بد نیست؛ توضیحات سؤال‌ها را دوباره مرور کن.':'این گفتار به یک دور مطالعه و تمرین بیشتر نیاز دارد.')+'</p></div><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="quiz-action" id="quizRetry">تکرار آزمون</button><button class="quiz-action" id="quizHome">بازگشت به آزمون‌ها</button></div></div>';
+ document.getElementById('quizRetry').addEventListener('click',()=>{const i=bank[window.grade].indexOf(state.unit);start(i)});
+ document.getElementById('quizHome').addEventListener('click',showShelf);
+}
+const original=window.render;
+window.render=function(){if(window.kind==='تستی'&&(window.grade==='یازدهم'||window.grade==='دوازدهم')){showShelf();return;}return original.apply(this,arguments)};
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.kind==='تستی'&&(window.grade==='یازدهم'||window.grade==='دوازدهم'))showShelf()}));
+document.querySelectorAll('.grade').forEach(b=>b.addEventListener('click',()=>{if(window.kind==='تستی'&&(b.dataset.grade==='یازدهم'||b.dataset.grade==='دوازدهم'))setTimeout(showShelf,0)}));
 })();
 </script>
 
