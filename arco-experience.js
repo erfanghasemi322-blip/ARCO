@@ -3,7 +3,7 @@ if(window.__ARCO_EXPERIENCE_V1__)return;window.__ARCO_EXPERIENCE_V1__=true;
 const KEY='arco-experience-v1',read=()=>{try{return JSON.parse(localStorage.getItem(KEY))||{}}catch{return{}}},state={ambient:true,notifications:[],sessions:0,minutes:0,...read()};
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}};
 const reduce=()=>matchMedia('(prefers-reduced-motion: reduce)').matches||document.body.classList.contains('arco-reduce-motion');
-const css=\`
+const css=`
 #arcoAtmosphere{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.42;transition:opacity .4s}
 body.arco-atmosphere-off #arcoAtmosphere{opacity:0}
 body>.shell,body>#arcoMobileDock,body>#arcoPersonalHub{position:relative;z-index:1}
@@ -27,7 +27,7 @@ body>.shell,body>#arcoMobileDock,body>#arcoPersonalHub{position:relative;z-index
 .arco-exp-empty{text-align:center;padding:26px;color:#9eacc5;font:12px/2 Vazirmatn}.arco-exp-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;font:12px Vazirmatn;color:#dfe8fa}
 @media(max-width:600px){.arco-experience-dock{left:10px;bottom:calc(78px + env(safe-area-inset-bottom));gap:7px}.arco-exp-btn{padding:10px 11px}.arco-exp-label{display:none}.arco-exp-panel{padding:17px;border-radius:21px}.arco-exp-head h2{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.arco-exp-btn{transition:none}}
-\`;
+`;
 const style=document.createElement('style');style.textContent=css;document.head.append(style);
 const canvas=document.createElement('canvas');canvas.id='arcoAtmosphere';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
 const ctx=canvas.getContext('2d');let w=0,h=0,particles=[];
