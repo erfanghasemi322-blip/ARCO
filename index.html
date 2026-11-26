@@ -653,7 +653,7 @@ function render(){
   }
   const chosen=sections.find(x=>x.id===examSection);
   if(!chosen){examSection=null;render();return}
-  const arr=resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===examSection);
+  const arr=[...resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===examSection),...(grade==="دوازدهم"&&examSection==="final"?[{grade:"دوازدهم",title:"نهایی ۴۰۵",url:"https://erfanghasemi322-blip.github.io/ARCO/Zist3-Tir1405-%5Bwww.konkur.in%5D.pdf"}]:[])];
   $("countLabel").textContent=arr.length+" منبع";
   const head=document.createElement("div");head.className="written-detail-head";
   head.innerHTML='<button type="button" class="written-back" data-exam-back>← بازگشت به سه بخش</button><div><span class="written-kicker">'+chosen.en+'</span><h3>'+chosen.icon+' '+chosen.title+'</h3><p>آرشیو اختصاصی زیست '+grade+'</p></div>';
