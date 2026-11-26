@@ -15,18 +15,15 @@
    </div>
    <div class="afp-divider"><span>امکانات آموزشی ARCO</span><i></i></div>
    <div class="afp-features">
-    <button class="afp-feature afp-test" type="button" data-afp-kind="تستی"><span class="afp-feature-icon">◈</span><span class="afp-feature-text"><b>آزمون‌های تستی</b><small>تمرین فصل‌به‌فصل و سنجش چهارگزینه‌ای</small></span><span class="afp-feature-arrow">↗</span></button>
-    <button class="afp-feature afp-written" type="button" data-afp-kind="تشریحی"><span class="afp-feature-icon">▤</span><span class="afp-feature-text"><b>آزمون‌های تشریحی</b><small>تمرین پاسخ‌نویسی و آمادگی امتحانات</small></span><span class="afp-feature-arrow">↗</span></button>
-    <button class="afp-feature afp-truefalse" type="button" data-afp-kind="تشریحی"><span class="afp-feature-icon">✓</span><span class="afp-feature-text"><b>درست و نادرست</b><small>بررسی دقیق عبارت‌ها و نکته‌های کتاب</small></span><span class="afp-feature-arrow">↗</span></button>
-    <button class="afp-feature afp-video" type="button" data-afp-kind="فیلم"><span class="afp-feature-icon">▷</span><span class="afp-feature-text"><b>ویدیوهای آموزشی</b><small>یادگیری تصویری مفاهیم زیست‌شناسی</small></span><span class="afp-feature-arrow">↗</span></button>
-    <button class="afp-feature afp-notes" type="button" data-afp-kind="آموزشی"><span class="afp-feature-icon">✧</span><span class="afp-feature-text"><b>جزوه و خلاصه درس</b><small>مرور نکته‌ها و جمع‌بندی گفتارها</small></span><span class="afp-feature-arrow">↗</span></button>
-    <button class="afp-feature afp-finals" type="button" data-afp-kind="تشریحی"><span class="afp-feature-icon">▣</span><span class="afp-feature-text"><b>بانک امتحانات نهایی</b><small>دسترسی به مجموعه آزمون‌های سال‌های گذشته</small></span><span class="afp-feature-arrow">↗</span></button>
+    <div class="afp-feature afp-test" type="button"><span class="afp-feature-icon">◈</span><span class="afp-feature-text"><b>آزمون‌های تستی</b><small>تمرین فصل‌به‌فصل و سنجش چهارگزینه‌ای</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-written" type="button"><span class="afp-feature-icon">▤</span><span class="afp-feature-text"><b>آزمون‌های تشریحی</b><small>تمرین پاسخ‌نویسی و آمادگی امتحانات</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-truefalse" type="button"><span class="afp-feature-icon">✓</span><span class="afp-feature-text"><b>درست و نادرست</b><small>بررسی دقیق عبارت‌ها و نکته‌های کتاب</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-video" type="button"><span class="afp-feature-icon">▷</span><span class="afp-feature-text"><b>ویدیوهای آموزشی</b><small>یادگیری تصویری مفاهیم زیست‌شناسی</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-notes" type="button"><span class="afp-feature-icon">✧</span><span class="afp-feature-text"><b>جزوه و خلاصه درس</b><small>مرور نکته‌ها و جمع‌بندی گفتارها</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-finals" type="button"><span class="afp-feature-icon">▣</span><span class="afp-feature-text"><b>بانک امتحانات نهایی</b><small>دسترسی به مجموعه آزمون‌های سال‌های گذشته</small></span><span class="afp-feature-arrow">↗</span></div>
    </div>
-   <div class="afp-bottom"><span>🧬 زیست دهم · یازدهم · دوازدهم</span><button type="button" class="afp-cta" data-afp-go>ورود به مسیر یادگیری <b>←</b></button></div>
+   <div class="afp-bottom"><span>🧬 زیست دهم · یازدهم · دوازدهم</span><button type="button" class="afp-cta">ورود به مسیر یادگیری <b>←</b></div></div>
   `;
-  const go=kind=>{const target=document.getElementById('learning');if(target)target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});if(kind){const tab=[...document.querySelectorAll('#resourceTabs [data-kind]')].find(x=>x.dataset.kind===kind);if(tab)setTimeout(()=>tab.click(),180)}};
-  section.querySelectorAll('[data-afp-kind]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.afpKind)));
-  section.querySelector('[data-afp-go]')?.addEventListener('click',()=>go());
- };
+
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
