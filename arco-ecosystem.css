@@ -209,3 +209,9 @@ button,.ghost,.tab,.eco-btn{transition:transform .2s ease,filter .2s ease,box-sh
 @media(max-width:780px){.afp-main{grid-template-columns:1fr;gap:0;padding:12px 0}.afp-art{min-height:205px;grid-row:1}.afp-copy{grid-row:2}.afp-features{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.universe-section.arco-feature-poster{padding:17px;border-radius:22px;margin:22px 0}.afp-topline{align-items:flex-start}.afp-edition{font-size:9px}.afp-main{padding:5px 0}.afp-art{min-height:185px}.afp-ring{width:165px;height:165px}.afp-ring-two{width:205px;height:205px}.afp-cell{width:106px;height:106px}.afp-cell-core{left:35px;top:32px;width:36px;height:36px}.afp-copy h2{font-size:27px;line-height:1.65}.afp-copy p{font-size:11px}.afp-stats span{font-size:9px;padding:7px 9px}.afp-features{grid-template-columns:1fr;gap:8px}.afp-feature{min-height:70px;padding:10px}.afp-feature-text b{font-size:12px}.afp-feature-text small{font-size:9px}.afp-bottom{align-items:flex-start;flex-direction:column}.afp-cta{width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.afp-cell{animation:none!important}.afp-feature{transition:none!important}}
+
+/* ARCO FEATURE POSTER · static non-interactive cards */
+.arco-feature-poster .afp-feature{cursor:default}
+.arco-feature-poster .afp-feature:hover,.arco-feature-poster .afp-feature:focus-visible{transform:none;border-color:#ffffff19;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:none;outline:none}
+.arco-feature-poster .afp-feature-arrow{display:none}
+.arco-feature-poster .afp-tagline{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid #8e83e955;border-radius:12px;background:linear-gradient(110deg,#674eb133,#146c7d33);color:#d9eaff;font-size:11px;font-weight:800}
