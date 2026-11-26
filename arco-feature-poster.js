@@ -24,6 +24,6 @@
    </div>
    <div class="afp-bottom"><span>🧬 زیست دهم · یازدهم · دوازدهم</span><span class="afp-tagline">یادگیری، تمرین و تسلط در ARCO</span></div>
   `;
-
+ };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
