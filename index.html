@@ -361,6 +361,9 @@ body:after{
 .summary-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
 .summary-tags span{padding:5px 8px;border:1px solid #665b9c66;border-radius:20px;background:#8e78ff12;color:#c9c2ff;font-size:9px}
 @media(max-width:600px){.summary-chapter>summary{padding:14px;font-size:12px}.summary-talk{padding:13px}.summary-talk p{font-size:11px}}
+
+.written-card.truefalse{--accent:#58d6d0;--glow:#278f9b}
+.tf-wrap{display:grid;gap:16px}.tf-intro{padding:18px;border:1px solid #315b69;border-radius:18px;background:linear-gradient(130deg,#102c3a,#151b31 75%)}.tf-intro h4{font-size:18px;margin:8px 0}.tf-intro p{color:#afc5d4;font-size:12px;line-height:2;margin:0}.tf-chapter{border:1px solid #293c55;border-radius:16px;background:#101b2c;padding:15px}.tf-chapter h4{margin:0 0 12px;font-size:14px;color:#a9e9e7}.tf-talks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tf-talk{border:1px solid #33465f;border-radius:13px;background:#14243a;color:#eef7ff;text-align:right;padding:13px;display:flex;justify-content:space-between;gap:10px;align-items:center}.tf-talk:disabled{opacity:.45;cursor:not-allowed}.tf-talk small{display:block;color:#8fa6bf;margin-top:5px}.tf-ready{color:#72dfbd;font-size:11px}.tf-quiz{border:1px solid #2c465f;border-radius:18px;background:linear-gradient(145deg,#122238,#0d1727);padding:18px}.tf-quiz-top{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#a9bed4;font-size:12px}.tf-progress{height:6px;background:#25364b;border-radius:8px;overflow:hidden;margin:13px 0 20px}.tf-progress span{display:block;height:100%;background:linear-gradient(90deg,#55d7d0,#8b83ff);transition:width .2s}.tf-question{font-size:17px;line-height:2;margin:0 0 18px}.tf-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tf-option{padding:13px;border:1px solid #40556d;border-radius:12px;background:#172a41;color:#f4f8ff;font-weight:700}.tf-option.correct{border-color:#43d7a3;background:#123c37;color:#8cf0c7}.tf-option.wrong{border-color:#ff667e;background:#482331;color:#ff9aaa}.tf-option:disabled{cursor:default}.tf-feedback{margin-top:15px;padding:14px;border-radius:13px;background:#17283b;border:1px solid #354c65;line-height:2;font-size:13px;color:#d6e5f2}.tf-feedback.good{border-color:#347c69}.tf-feedback.bad{border-color:#91475a}.tf-feedback strong{display:block;margin-bottom:5px}.tf-next{margin-top:14px}.tf-result{padding:22px;text-align:center;border:1px solid #36556a;border-radius:18px;background:#12283a}.tf-result b{display:block;font-size:30px;color:#78e2d0;margin:8px}.tf-muted{font-size:12px;color:#9aadc4;line-height:2}@media(max-width:650px){.tf-talks{grid-template-columns:1fr}.tf-quiz{padding:14px}.tf-question{font-size:15px}.tf-options{gap:8px}}
 </style>
 <style>
 /* ARCO interactive textbook quizzes */
@@ -547,6 +550,93 @@ function validUrl(s){try{let u=new URL(s);return ["http:","https:"].includes(u.p
 function load(){try{resources=JSON.parse(localStorage.getItem(key)||"[]");if(!Array.isArray(resources))resources=[]}catch{resources=[]}
 const h=location.hash.match(/#data=([^&]+)/);if(h){try{let shared=JSON.parse(decodeURIComponent(escape(atob(h[1]))));if(Array.isArray(shared))resources=shared.filter(x=>x&&grades.includes(x.grade)&&kinds.includes(x.kind)&&typeof x.title==="string"&&validUrl(x.url));}catch{}}}
 function persist(){try{localStorage.setItem(key,JSON.stringify(resources))}catch{}}
+
+const trueFalseBank={
+ "دهم":{
+  "فصل ۱ · دنیای زنده":[
+   {title:"گفتار ۱ · زیست‌شناسی چیست؟",questions:[
+    ["زیست‌شناسی شاخه‌ای از علوم تجربی است که جانداران و فرایندهای زیستی را بررسی می‌کند.",true,"زیست‌شناسی به مطالعه جانداران و فرایندهای مربوط به زندگی می‌پردازد و از روش‌های علوم تجربی بهره می‌گیرد."],
+    ["در پژوهش زیستی، مشاهده و طرح پرسش می‌توانند از گام‌های آغازین بررسی علمی باشند.",true,"مشاهده پدیده‌ها و تبدیل آن‌ها به پرسش، زمینه ساخت فرضیه و طراحی بررسی را فراهم می‌کند."],
+    ["هر فرضیه علمی پس از یک آزمایش برای همیشه به حقیقتی قطعی تبدیل می‌شود.",false,"فرضیه با شواهد آزموده می‌شود و ممکن است پشتیبانی یا رد شود؛ یک آزمایش آن را به حقیقت تغییرناپذیر تبدیل نمی‌کند."],
+    ["در یک آزمایش، متغیر مستقل عاملی است که پژوهشگر اثر آن را بررسی می‌کند.",true,"متغیر مستقل عاملی است که تغییر داده می‌شود تا اثر آن بر متغیر وابسته بررسی شود."],
+    ["زیست‌شناسی فقط به شناخت بدن انسان محدود است.",false,"زیست‌شناسی همه جانداران و فرایندهای زیستی را بررسی می‌کند، نه فقط بدن انسان."],
+    ["یافته‌های زیست‌شناسی می‌توانند در کشاورزی، سلامت و حفاظت از محیط‌زیست کاربرد داشته باشند.",true,"این حوزه‌ها از نمونه‌های مهم کاربرد دانش زیست‌شناسی در زندگی انسان هستند."],
+    ["هر پرسش علمی را می‌توان تنها با آزمایش مستقیم و بدون محدودیت بررسی کرد.",false,"همه پرسش‌ها امکان آزمایش مستقیم ندارند و روش علمی نیز محدودیت‌هایی دارد؛ گاهی از مشاهده، مقایسه و تحلیل داده استفاده می‌شود."],
+    ["اخلاق زیستی به موضوع‌هایی مانند محرمانه‌ماندن اطلاعات ژنی و حقوق جانوران می‌پردازد.",true,"کتاب این موارد را از موضوع‌های اخلاق زیستی معرفی می‌کند."],
+    ["تولید غذای سالم و کافی از زمینه‌های کاربرد زیست‌شناسی در خدمت جامعه است.",true,"زیست‌شناسی می‌تواند در بهبود تولید غذا و سلامت جامعه نقش داشته باشد."],
+    ["نتایج پژوهش علمی را باید بدون توجه به شواهد و فقط بر اساس نظر پژوهشگر پذیرفت.",false,"پذیرش نتیجه علمی باید بر شواهد، روش معتبر و تحلیل داده‌ها تکیه داشته باشد، نه صرفاً نظر شخصی."]
+   ]},
+   {title:"گفتار ۲ · گستره حیات",questions:[
+    ["یاخته یکی از سطوح سازمان‌یابی حیات است و از اندامک‌ها بزرگ‌تر است.",true,"اندامک‌ها درون یاخته قرار دارند؛ یاخته سطحی بالاتر از اندامک است."],
+    ["بافت از اجتماع یاخته‌هایی تشکیل می‌شود که در انجام کار یا کارهای مشترک همکاری دارند.",true,"بافت از یاخته‌های مرتبط و سازمان‌یافته تشکیل می‌شود."],
+    ["اندام از چند بافت تشکیل می‌شود که برای انجام کار مشخصی با هم همکاری می‌کنند.",true,"اندام سطحی از سازمان‌یابی است که چند نوع بافت را در بر می‌گیرد."],
+    ["جمعیت به همه جانداران گونه‌های گوناگون در یک زیست‌بوم گفته می‌شود.",false,"جمعیت شامل افراد یک گونه در محدوده‌ای معین و در زمان مشخص است؛ اجتماع از جمعیت‌های گونه‌های مختلف تشکیل می‌شود."],
+    ["اجتماع زیستی از جمعیت‌های گونه‌های مختلف تشکیل می‌شود.",true,"اجتماع شامل جمعیت‌های گونه‌های مختلفی است که در یک محدوده با هم زندگی می‌کنند."],
+    ["زیست‌بوم فقط شامل جانداران یک منطقه است و عوامل غیرزنده را در بر نمی‌گیرد.",false,"زیست‌بوم شامل اجتماع جانداران و عوامل غیرزنده محیط و ارتباط میان آن‌هاست."],
+    ["هم‌ایستایی به حفظ شرایط نسبتاً پایدار درونی جاندار گفته می‌شود.",true,"جانداران با سازوکارهای تنظیمی، شرایط درونی خود را در محدوده‌ای مناسب نگه می‌دارند."],
+    ["رشد و نمو، پاسخ به محرک و تولیدمثل از ویژگی‌های حیات‌اند.",true,"این موارد در کنار ویژگی‌هایی مانند نظم و هم‌ایستایی از ویژگی‌های جانداران هستند."],
+    ["وجود تنها یک ویژگی، مانند حرکت، برای زنده دانستن هر چیزی کافی است.",false,"هیچ ویژگی منفردی به‌تنهایی معیار کافی حیات نیست؛ باید مجموعه ویژگی‌های حیات در نظر گرفته شود."],
+    ["سازش می‌تواند در افزایش موفقیت جاندار برای بقا و تولیدمثل در محیط نقش داشته باشد.",true,"ویژگی‌های سازشی در ارتباط با شرایط محیطی می‌توانند احتمال بقا و تولیدمثل را افزایش دهند."]
+   ]},
+   {title:"گفتار ۳ · یاخته و بافت در بدن انسان",questions:[
+    ["یاخته واحد بنیادی ساختار و عملکرد جانداران است.",true,"یاخته کوچک‌ترین واحدی است که ساختار و عملکردهای بنیادی حیات را نشان می‌دهد."],
+    ["همه یاخته‌های بدن انسان از نظر شکل و عملکرد کاملاً یکسان‌اند.",false,"یاخته‌ها با توجه به کار تخصصی خود شکل‌ها و عملکردهای متفاوتی دارند."],
+    ["یاخته‌های بدن انسان با وجود تخصص‌یافتگی، معمولاً اطلاعات وراثتی مشابهی دارند.",true,"تفاوت عملکرد بسیاری از یاخته‌ها بیشتر به تفاوت در فعالیت ژن‌ها مربوط است، نه متفاوت‌بودن همه اطلاعات وراثتی."],
+    ["تنظیم فعالیت ژن‌ها در تخصص‌یافتگی یاخته‌ها نقش دارد.",true,"فعال یا غیرفعال شدن بخش‌های متفاوتی از اطلاعات ژنی به ایجاد ویژگی‌های تخصصی کمک می‌کند."],
+    ["بافت پوششی یکی از چهار نوع اصلی بافت بدن انسان است.",true,"چهار گروه اصلی بافت‌های بدن شامل پوششی، پیوندی، ماهیچه‌ای و عصبی‌اند."],
+    ["بافت پیوندی فقط در سطح بیرونی بدن قرار دارد.",false,"بافت پیوندی در بخش‌های گوناگون بدن وجود دارد و نقش‌های حمایتی، ارتباطی و ذخیره‌ای دارد."],
+    ["یاخته‌های ماهیچه‌ای در ایجاد حرکت با انقباض نقش دارند.",true,"انقباض یاخته‌های ماهیچه‌ای می‌تواند موجب حرکت بخش‌هایی از بدن یا حرکت مواد در اندام‌ها شود."],
+    ["نورون‌ها از یاخته‌های اصلی بافت عصبی هستند.",true,"یاخته‌های عصبی یا نورون‌ها پیام‌های عصبی را دریافت و منتقل می‌کنند."],
+    ["همه یاخته‌های بدن انسان هسته‌ای با شکل و اندازه یکسان دارند.",false,"یاخته‌ها از نظر شکل، اندازه و برخی ویژگی‌های ساختاری متفاوت‌اند و بعضی یاخته‌ها در مراحل بلوغ هسته خود را از دست می‌دهند."],
+    ["بافت‌ها با همکاری یکدیگر در ساخت اندام‌ها و دستگاه‌های بدن مشارکت می‌کنند.",true,"سازمان‌یابی بدن از یاخته به بافت، اندام و دستگاه می‌رسد و این سطوح با هم همکاری می‌کنند."]
+   ]}
+  ]
+ }
+};
+function renderTrueFalse(){
+ const root=$("resourceList");$("countLabel").textContent="بانک تعاملی · زیست "+grade;
+ const head=document.createElement("div");head.className="written-detail-head";
+ head.innerHTML='<button type="button" class="written-back" data-exam-back>← بازگشت به بخش‌ها</button><div><span class="written-kicker">ARCO · TRUE OR FALSE LAB</span><h3>🧬 آزمون درست / نادرست</h3><p>هر گفتار: ۱۰ گزاره، پاسخ فوری و توضیح علمی</p></div>';root.append(head);
+ if(grade!=="دهم"){const note=document.createElement("div");note.className="written-empty";note.innerHTML='<span class="written-empty-icon">📘</span><strong>بانک این پایه در مرحله بعدی آماده می‌شود</strong><p>ساختار آزمون برای هر سه پایه یکسان است؛ فعلاً تولید محتوای مستند از کتاب زیست دهم آغاز شده تا سؤال‌ها با متن کتاب هماهنگ باشند.</p>';root.append(note);return;}
+ const chapters=trueFalseBank[grade]||{};
+ Object.entries(chapters).forEach(([chapter,talks])=>{
+  const box=document.createElement("section");box.className="tf-chapter";const h=document.createElement("h4");h.textContent=chapter;box.append(h);
+  const grid=document.createElement("div");grid.className="tf-talks";
+  talks.forEach((talk,index)=>{const b=document.createElement("button");b.type="button";b.className="tf-talk";const span=document.createElement("span");span.textContent=talk.title;const small=document.createElement("small");small.textContent="۱۰ گزاره · پاسخ تشریحی";span.append(small);const ready=document.createElement("span");ready.className="tf-ready";ready.textContent="شروع آزمون ↗";b.append(span,ready);b.addEventListener("click",()=>startTrueFalse(talk));grid.append(b)});
+  box.append(grid);root.append(box);
+ });
+ const later=document.createElement("p");later.className="tf-muted";later.textContent="این نسخه، فصل اول زیست دهم را با هر سه گفتار پوشش می‌دهد. فصل‌های بعدی دهم و سپس بانک یازدهم و دوازدهم به همین آرشیو اضافه می‌شوند؛ محتوای منتشرنشده به‌عنوان آزمون آماده نمایش داده نمی‌شود.";root.append(later);
+}
+function startTrueFalse(talk){
+ const root=$("resourceList");root.innerHTML="";
+ const head=document.createElement("div");head.className="written-detail-head";head.innerHTML='<button type="button" class="written-back" id="tfBack">← بازگشت به گفتارها</button><div><span class="written-kicker">ARCO · INTERACTIVE QUIZ</span><h3>🧬 '+talk.title+'</h3><p>۱۰ گزاره با توضیح علمی پس از هر پاسخ</p></div>';root.append(head);
+ let index=0,score=0,answered=false;
+ const quiz=document.createElement("section");quiz.className="tf-quiz";root.append(quiz);
+ $("tfBack").addEventListener("click",renderTrueFalse);
+ function draw(){
+  answered=false;quiz.innerHTML="";const q=talk.questions[index];
+  const top=document.createElement("div");top.className="tf-quiz-top";const count=document.createElement("span");count.textContent="پرسش "+(index+1)+" از "+talk.questions.length;const points=document.createElement("span");points.textContent="امتیاز: "+score;top.append(count,points);quiz.append(top);
+  const progress=document.createElement("div");progress.className="tf-progress";const fill=document.createElement("span");fill.style.width=(index/talk.questions.length*100)+"%";progress.append(fill);quiz.append(progress);
+  const statement=document.createElement("h4");statement.className="tf-question";statement.textContent=q[0];quiz.append(statement);
+  const options=document.createElement("div");options.className="tf-options";const yes=document.createElement("button"),no=document.createElement("button");yes.type=no.type="button";yes.className=no.className="tf-option";yes.textContent="درست";no.textContent="نادرست";options.append(yes,no);quiz.append(options);
+  const feedback=document.createElement("div");feedback.className="tf-feedback";feedback.hidden=true;quiz.append(feedback);
+  function answer(value,button){
+   if(answered)return;answered=true;const correct=value===q[1];if(correct)score++;
+   yes.disabled=no.disabled=true;
+   const correctButton=q[1]?yes:no;correctButton.classList.add("correct");if(!correct)button.classList.add("wrong");
+   feedback.hidden=false;feedback.classList.toggle("good",correct);feedback.classList.toggle("bad",!correct);
+   const label=document.createElement("strong");label.textContent=correct?"✓ پاسخ درست است":"✕ پاسخ انتخابی نادرست است";
+   const explanation=document.createElement("span");explanation.textContent=(correct?"آفرین. ":"پاسخ صحیح: "+(q[1]?"درست":"نادرست")+"؛ ")+q[2];feedback.append(label,explanation);
+   const next=document.createElement("button");next.type="button";next.className="btn tf-next";next.textContent=index===talk.questions.length-1?"مشاهده نتیجه":"سؤال بعدی ←";next.addEventListener("click",()=>{index++;if(index<talk.questions.length)draw();else finish()});quiz.append(next);
+  }
+  yes.addEventListener("click",()=>answer(true,yes));no.addEventListener("click",()=>answer(false,no));
+ }
+ function finish(){
+  quiz.innerHTML="";const result=document.createElement("div");result.className="tf-result";const title=document.createElement("h4");title.textContent="آزمون به پایان رسید";const scoreEl=document.createElement("b");scoreEl.textContent=score+" از "+talk.questions.length;const detail=document.createElement("p");detail.className="tf-muted";detail.textContent="پاسخ درست: "+score+" · پاسخ نادرست: "+(talk.questions.length-score);const restart=document.createElement("button");restart.type="button";restart.className="btn";restart.textContent="آزمون دوباره";restart.addEventListener("click",()=>{index=0;score=0;draw()});result.append(title,scoreEl,detail,restart);quiz.append(result);
+ }
+ draw();
+}
+
 function render(){
  $("gradeTitle").textContent="زیست "+grade;
  $("resourceList").innerHTML="";
@@ -633,11 +723,12 @@ function render(){
   const sections=[
    {id:"final",title:"امتحان‌های نهایی",en:"FINAL EXAMS",icon:"🏛️",desc:"سوالات و PDF امتحان‌های نهایی سال‌های گذشته",tone:"final"},
    {id:"mock",title:"امتحان‌های شبه‌نهایی",en:"MOCK FINALS",icon:"🎯",desc:"آزمون‌های شبیه‌ساز با حال‌وهوای امتحان نهایی",tone:"mock"},
-   {id:"authored",title:"امتحان‌های تألیفی",en:"ORIGINAL EXAMS",icon:"✍️",desc:"آزمون‌های طراحی‌شده برای تمرین تشریحی",tone:"authored"}
+   {id:"authored",title:"امتحان‌های تألیفی",en:"ORIGINAL EXAMS",icon:"✍️",desc:"آزمون‌های طراحی‌شده برای تمرین تشریحی",tone:"authored"},
+   {id:"truefalse",title:"درست / نادرست",en:"TRUE OR FALSE",icon:"🧬",desc:"آزمون تعاملی ده‌سؤالی برای هر گفتار، همراه با پاسخ تشریحی",tone:"truefalse"}
   ];
   if(!examSection){
    const total=resources.filter(x=>x.grade===grade&&x.kind===kind).length;
-   $("countLabel").textContent="۳ بخش مستقل";
+   $("countLabel").textContent="۴ بخش مستقل";
    const intro=document.createElement("div");intro.className="written-intro";
    intro.innerHTML='<span class="written-kicker">ARCO · WRITTEN EXAMS</span><h3>مسیر تمرین تشریحی</h3><p>منبع موردنظرت را از قفسه‌های زیر انتخاب کن. هر پایه آرشیو جداگانه خودش را دارد.</p>';
    $("resourceList").append(intro);
@@ -653,6 +744,7 @@ function render(){
   }
   const chosen=sections.find(x=>x.id===examSection);
   if(!chosen){examSection=null;render();return}
+  if(examSection==="truefalse"){renderTrueFalse();return}
   const legacyFinals=[{grade:"دوازدهم",title:"نهایی ۴۰۰",url:"https://erfanghasemi322-blip.github.io/ARCO/zistshenasi-khordad1400-nahaei.pdf"},{grade:"دوازدهم",title:"نهایی ۴۰۱",url:"https://erfanghasemi322-blip.github.io/ARCO/zistshenasi-shahrivar1401.pdf"},{grade:"دوازدهم",title:"نهایی ۴۰۲",url:"https://erfanghasemi322-blip.github.io/ARCO/zist-12-khordad1402.pdf"},{grade:"دوازدهم",title:"نهایی ۴۰۳",url:"https://erfanghasemi322-blip.github.io/ARCO/zist12-khordad1403-2.pdf"},{grade:"دوازدهم",title:"نهایی ۴۰۴",url:"https://erfanghasemi322-blip.github.io/ARCO/zist-12th-kh1404-p30konkor-com.pdf"}];
   const grade11Finals=[{grade:"یازدهم",title:"نهایی ۴۰۳",url:"https://erfanghasemi322-blip.github.io/ARCO/zist11_khordad1403.pdf"},{grade:"یازدهم",title:"نهایی ۴۰۴",url:"https://erfanghasemi322-blip.github.io/ARCO/zist-11th-kh404-p30konkor-com.pdf"},{grade:"یازدهم",title:"نهایی ۴۰۵",url:"https://erfanghasemi322-blip.github.io/ARCO/zist11-khordad405.pdf"}];
   const arr=[...resources.filter(x=>x.grade===grade&&x.kind===kind&&x.section===examSection),...(grade==="دوازدهم"&&examSection==="final"?[...legacyFinals,{grade:"دوازدهم",title:"نهایی ۴۰۵",url:"https://erfanghasemi322-blip.github.io/ARCO/Zist3-Tir1405-%5Bwww.konkur.in%5D.pdf"}]:[]),...(grade==="یازدهم"&&examSection==="final"?grade11Finals:[])];
