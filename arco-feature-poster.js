@@ -15,14 +15,14 @@
    </div>
    <div class="afp-divider"><span>امکانات آموزشی ARCO</span><i></i></div>
    <div class="afp-features">
-    <div class="afp-feature afp-test" type="button"><span class="afp-feature-icon">◈</span><span class="afp-feature-text"><b>آزمون‌های تستی</b><small>تمرین فصل‌به‌فصل و سنجش چهارگزینه‌ای</small></span><span class="afp-feature-arrow">↗</span></div>
-    <div class="afp-feature afp-written" type="button"><span class="afp-feature-icon">▤</span><span class="afp-feature-text"><b>آزمون‌های تشریحی</b><small>تمرین پاسخ‌نویسی و آمادگی امتحانات</small></span><span class="afp-feature-arrow">↗</span></div>
-    <div class="afp-feature afp-truefalse" type="button"><span class="afp-feature-icon">✓</span><span class="afp-feature-text"><b>درست و نادرست</b><small>بررسی دقیق عبارت‌ها و نکته‌های کتاب</small></span><span class="afp-feature-arrow">↗</span></div>
-    <div class="afp-feature afp-video" type="button"><span class="afp-feature-icon">▷</span><span class="afp-feature-text"><b>ویدیوهای آموزشی</b><small>یادگیری تصویری مفاهیم زیست‌شناسی</small></span><span class="afp-feature-arrow">↗</span></div>
-    <div class="afp-feature afp-notes" type="button"><span class="afp-feature-icon">✧</span><span class="afp-feature-text"><b>جزوه و خلاصه درس</b><small>مرور نکته‌ها و جمع‌بندی گفتارها</small></span><span class="afp-feature-arrow">↗</span></div>
-    <div class="afp-feature afp-finals" type="button"><span class="afp-feature-icon">▣</span><span class="afp-feature-text"><b>بانک امتحانات نهایی</b><small>دسترسی به مجموعه آزمون‌های سال‌های گذشته</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-test"><span class="afp-feature-icon">◈</span><span class="afp-feature-text"><b>آزمون‌های تستی</b><small>تمرین فصل‌به‌فصل و سنجش چهارگزینه‌ای</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-written"><span class="afp-feature-icon">▤</span><span class="afp-feature-text"><b>آزمون‌های تشریحی</b><small>تمرین پاسخ‌نویسی و آمادگی امتحانات</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-truefalse"><span class="afp-feature-icon">✓</span><span class="afp-feature-text"><b>درست و نادرست</b><small>بررسی دقیق عبارت‌ها و نکته‌های کتاب</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-video"><span class="afp-feature-icon">▷</span><span class="afp-feature-text"><b>ویدیوهای آموزشی</b><small>یادگیری تصویری مفاهیم زیست‌شناسی</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-notes"><span class="afp-feature-icon">✧</span><span class="afp-feature-text"><b>جزوه و خلاصه درس</b><small>مرور نکته‌ها و جمع‌بندی گفتارها</small></span><span class="afp-feature-arrow">↗</span></div>
+    <div class="afp-feature afp-finals"><span class="afp-feature-icon">▣</span><span class="afp-feature-text"><b>بانک امتحانات نهایی</b><small>دسترسی به مجموعه آزمون‌های سال‌های گذشته</small></span><span class="afp-feature-arrow">↗</span></div>
    </div>
-   <div class="afp-bottom"><span>🧬 زیست دهم · یازدهم · دوازدهم</span><button type="button" class="afp-cta">ورود به مسیر یادگیری <b>←</b></div></div>
+   <div class="afp-bottom"><span>🧬 زیست دهم · یازدهم · دوازدهم</span><span class="afp-tagline">یادگیری، تمرین و تسلط در ARCO</span></div>
   `;
 
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
