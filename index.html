@@ -478,6 +478,23 @@ body,body *{font-family:var(--arco-font-family,"Vazirmatn",Tahoma,sans-serif)!im
 @media(max-width:600px){.arco-hub-card{padding:17px;border-radius:20px}.arco-hub-grid,.arco-auth-fields{grid-template-columns:1fr}.arco-avatar-grid{grid-template-columns:repeat(4,1fr)}.arco-hub-head h2{font-size:19px}.arco-settings-trigger span,.arco-profile-trigger span{display:none}}
 </style>
 <link rel="stylesheet" href="./arco-ecosystem.css?v=20261126-poster3">
+
+<style>
+/* ARCO introduction film */
+.arco-intro-film{position:relative;max-width:1180px;margin:30px auto 34px;padding:clamp(20px,4vw,38px);border:1px solid #4a4a83;border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 8% 0%,#286b8066,transparent 42%),radial-gradient(ellipse at 100% 100%,#6841a944,transparent 45%),linear-gradient(135deg,#101b31,#121329 70%,#0b2632);box-shadow:0 24px 70px #0005;isolation:isolate}
+.arco-intro-film:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;background-image:linear-gradient(#9bb8e5 1px,transparent 1px),linear-gradient(90deg,#9bb8e5 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(120deg,#000,transparent 78%)}
+.aif-heading{text-align:center;margin:0 auto 22px;max-width:680px}
+.aif-kicker{font-size:10px;letter-spacing:2px;color:#73e4e5}
+.aif-heading h2{font-size:clamp(24px,4vw,34px);margin:9px 0;background:linear-gradient(90deg,#fff,#78e7e3 55%,#b69aff);-webkit-background-clip:text;color:transparent}
+.aif-heading p{font-size:13px;line-height:2;color:#b9c8df;margin:0}
+.aif-player{max-width:900px;margin:auto;padding:10px;border:1px solid #7185bd66;border-radius:21px;background:#050914aa;box-shadow:0 18px 55px #0008,0 0 35px #6c64db20}
+.aif-player video{display:block;width:100%;max-height:520px;aspect-ratio:16/9;object-fit:contain;background:#03050b;border-radius:14px}
+.aif-caption{display:flex;align-items:center;gap:11px;padding:13px 8px 5px;color:#eaf5ff}
+.aif-play-mark{width:35px;height:35px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#42cbd1,#8065e8);font-size:13px;box-shadow:0 5px 20px #42cbd144}
+.aif-caption b,.aif-caption small{display:block}.aif-caption b{font-size:13px}.aif-caption small{font-size:10px;color:#9fb3cf;margin-top:4px;letter-spacing:.5px}
+@media(max-width:600px){.arco-intro-film{margin:20px 12px 25px;padding:18px 13px;border-radius:21px}.aif-player{padding:6px;border-radius:15px}.aif-player video{border-radius:10px}.aif-heading p{font-size:12px}}
+</style>
+
 </head>
 <body>
 <main class="shell">
@@ -498,6 +515,22 @@ body,body *{font-family:var(--arco-font-family,"Vazirmatn",Tahoma,sans-serif)!im
     <div class="float-tag tag-top">DNA · LIFE CODE</div><div class="float-tag tag-bottom">BIOLOGY LAB ✧</div>
   </div>
   <span class="flying-butterfly butterfly-one" aria-hidden="true">🦋</span><span class="flying-butterfly butterfly-two" aria-hidden="true">🦋</span>
+
+</section>
+
+<section class="arco-intro-film" aria-labelledby="arcoIntroTitle">
+  <div class="aif-heading">
+    <span class="aif-kicker">DISCOVER THE ARCO UNIVERSE</span>
+    <h2 id="arcoIntroTitle">با ARCO آشنا شو</h2>
+    <p>یک نگاه کوتاه به جهان زیستی و امکاناتی که برای یادگیری در کنار هم جمع کرده‌ایم.</p>
+  </div>
+  <div class="aif-player">
+    <video controls playsinline preload="metadata" aria-label="فیلم معرفی وب‌سایت ARCO">
+      <source src="./arco-intro.mp4" type="video/mp4">
+      مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+    </video>
+    <div class="aif-caption"><span class="aif-play-mark">▶</span><span><b>فیلم معرفی رسمی ARCO</b><small>ARCO · Biology Learning System</small></span></div>
+  </div>
 </section>
 
 <section class="universe-section arco-feature-poster" data-feature-poster="ready" aria-label="معرفی امکانات ARCO">
