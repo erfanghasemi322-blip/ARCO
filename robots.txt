@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erfanghasemi322-blip.github.io/ARCO/sitemap.xml
